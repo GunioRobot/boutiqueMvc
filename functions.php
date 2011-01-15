@@ -68,7 +68,6 @@ function menu_top($page)
 //la variable $page permet de colorer l'élément du menu sur lequel on se trouve actuellement, en rajoutant la classe 'active'
     echo '<a href="index.php"'; if($page == 'accueil'){ echo ' class="active" '; } echo '>Accueil</a>';
     echo ' ~ <a href="boutique.php"'; if($page == 'boutique'){ echo ' class="active" '; } echo '>Boutique</a>';
-    echo ' ~ <a href="liste-produits.php"'; if($page == 'liste-produits'){ echo ' class="active" '; } echo '>Liste de tous nos produits</a>';
     echo ' ~ <a href="contact.php"'; if($page == 'contact'){ echo ' class="active" '; } echo '>Contact</a>';
     echo ' ~ <a href="equipe.php"'; if($page == 'equipe'){ echo ' class="active" '; } echo '>Equipe</a>';
 //pour l'affichage des éléments Inscription / Connexion, il faut que le membre ne soit pas déjà connecté

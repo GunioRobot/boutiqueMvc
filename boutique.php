@@ -35,7 +35,15 @@ elseif (isset($_GET['produit']))
 //admin
 elseif (isset($_GET['admin']))
 {
-    include_once('control/boutique/admin/index.php');
+    switch ($_GET['admin']) {
+    case 'produit-edit': include_once('control/boutique/admin/produit-edit.php'); break;
+    case 'produit-del': include_once('control/boutique/admin/produit-del.php'); break;
+    case 'achat': include_once('control/boutique/admin/achat.php'); break;
+    case 'categorie': include_once('control/boutique/admin/categorie.php'); break;
+    case 'del': include_once('control/boutique/admin/delete.php'); break;
+
+    default: include_once('control/boutique/admin/index.php'); break;
+    }    
 }
 else
 {
