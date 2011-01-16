@@ -296,7 +296,7 @@ global $titreWebSite, $sloganWebSite;
 <body>
     <div id="main">
         <div id="header" class="header">
-            <img src="header.png" alt="header"/>
+            <img src="images/header.png" alt="header"/>
         </div>
         <div id="navigation" class="navigation">
             <?php menu_top($page); ?>
