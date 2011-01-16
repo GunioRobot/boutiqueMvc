@@ -17,23 +17,16 @@ if(isset($_GET['op']))
             break;
     }
 }
-elseif (isset($_GET['cat']))
+elseif (isset($_GET['admin']))
 {
-    include_once('control/boutique/listeCategorie.php');
-}
-elseif (isset($_GET['alpha']))
-{
-    include_once('control/boutique/listeAlpha.php');
-}
-elseif (isset($_GET['op']) AND $_GET['op'] == 'listAll')
-{
-    include_once('control/boutique/listeAll.php');
-}
-elseif (isset($_GET['produit']))
-{
-    include_once('control/boutique/fiche.php');
+    if(isset($_GET['id'])){$_GET['id'] = (int)$_GET['id'];}
+    if($_GET['admin'] == 'del' AND isset($_GET['id'])){ include_once('control/membre/admin/del.php');}
+    elseif($_GET['admin'] == 'edit' AND isset($_GET['id'])){ include_once('control/membre/admin/edit.php'); }
+
+    else{include_once('control/membre/admin/index.php'); }
 }
 else
 {
-    include_once('control/boutique/index.php');
+    $js = false; $admin= false; $page = 'membre'; $titreErreur = 'membre - erreur'; $erreur = 'Aucune information sur cette page!';
+        include_once('functions.php'); include_once('vue/erreur.php'); die;
 }
