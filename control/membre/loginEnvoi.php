@@ -41,7 +41,7 @@
         $infosMembresArray = selectIDmembre($_POST['pseudo'], $password);
         if (!$infosMembresArray){
             // aucun résultat n'a été trouvé, on affichera une erreur
-            $send[]= 'Le couple identifiants/mots de passes ne correspondent à aucun utilisateur';
+            $send[]= 'Le couple identifiants/mots de passes ne correspondent à aucun utilisateur'; $envoi = 0;
         }
         else{
             foreach($infosMembresArray as $infosMembre)

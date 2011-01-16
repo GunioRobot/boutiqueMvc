@@ -17,8 +17,8 @@
                             <td><?php echo htmlspecialchars($membre["pseudo"]);?></td>
                             <td><?php echo htmlspecialchars($membre["prenom"]).' '.htmlspecialchars($membre["nom"]);?></td>
                             <td><?php echo htmlspecialchars($membre["mail"]);?></td>
-                            <td><a href="membre.php?admin=edit&amp;id=<?php echo $membre["ID"];?>" class="a-img"><img src="pencil.png" alt="[ ✏ éditer ]" /></a></td>
-                            <td><a href="membre.php?admin=del&amp;id=<?php echo $membre["ID"];?>" class="a-img"><img src="cross.png" alt="[ ✖ supprimer ]" /></a></td>
+                            <td><a href="membre.php?admin=edit&amp;id=<?php echo $membre["ID"];?>" class="a-img"><img src="images/pencil.png" alt="[ ✏ éditer ]" /></a></td>
+                            <td><a href="membre.php?admin=del&amp;id=<?php echo $membre["ID"];?>" class="a-img"><img src="images/cross.png" alt="[ ✖ supprimer ]" /></a></td>
                         </tr>
 <?php } ?>
                     </table>

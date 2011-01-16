@@ -13,4 +13,4 @@ else{printHeader('membre-login', false, 'connexion', true);} ?>
     }?>
                 <br /><br />
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

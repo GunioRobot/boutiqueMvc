@@ -1,6 +1,9 @@
 <?php printHeader('admin', false, 'administration : ajouter une news', true);  ?>
             <div id="admin-add-news" class="block-middle">
                 <div class="head-block">ajouter une news</div><br />
+                <div style="text-align:center;">
+                    <a href="news.php?admin=index">[ Gestion des news ]</a> | <a href="news.php?admin=add" class="active">[ Ajouter une news ]</a>
+                </div><br />
                 <form action="news.php?admin=envoiNew" method="post" enctype="multipart/form-data" onsubmit="return verifFormNews(this, 0)">
                     <fieldset style="text-align:left; width:80%; margin:auto;">
                         <legend>Ajouter une news</legend>

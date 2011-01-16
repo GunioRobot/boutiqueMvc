@@ -14,8 +14,8 @@
                         <td><?php echo htmlspecialchars($message["ID"]); ?></td>
                         <td><?php echo htmlspecialchars($message["nom"]); ?></td>
                         <td><?php echo htmlspecialchars($message["mail"]); ?></td>
-                        <td><a href="contact.php?admin=show&amp;id=<?php echo $message["ID"]; ?>" class="a-img"><img src="eye.png" alt="[ ✔ voir ]" /></a></td>
-                        <td><a href="contact.php?admin=del&amp;id=<?php echo $message["ID"]; ?>" class="a-img"><img src="cross.png" alt="[ ✖ supprimer ]" /></a></td>
+                        <td><a href="contact.php?admin=show&amp;id=<?php echo $message["ID"]; ?>" class="a-img"><img src="images/eye.png" alt="[ ✔ voir ]" /></a></td>
+                        <td><a href="contact.php?admin=del&amp;id=<?php echo $message["ID"]; ?>" class="a-img"><img src="images/cross.png" alt="[ ✖ supprimer ]" /></a></td>
                     </tr>
             <?php    } ?>
                 </table>

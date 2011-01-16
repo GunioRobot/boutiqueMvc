@@ -13,11 +13,11 @@ printHeader('admin', false, 'administration', true); ?>
                 <div class="head-block">administration</div><br />
                 <table style="width:100%; text-align:center;">
                     <tr>
-                        <?php foreach($result as $element){ ?>
+                        <?php foreach($result as $element){ if($element['admin']){ ?>
                         <td>
                             <a href="<?php echo $element['name'];?>.php?admin=index"><?php echo strtoupper($element['name']);?></a>
                         </td>
-                        <?php } ?>
+                        <?php }} ?>
                     </tr>
                 </table>
             </div>

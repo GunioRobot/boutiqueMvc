@@ -19,8 +19,8 @@
                         <td><?php echo htmlspecialchars($produit["titre"]); ?></td>
                         <td><?php echo htmlspecialchars($produit["auteur"]); ?></td>
                         <td><?php echo htmlspecialchars($produit["categorie"]); ?></td>
-                        <td><a href="boutique.php?admin=produit-edit&amp;id=<?php echo $produit["ID"]; ?>" class="a-img"><img src="pencil.png" alt="[ ✏ éditer ]" /></a></td>
-                        <td><a href="boutique.php?admin=produit-del&amp;id=<?php echo $produit["ID"]; ?>" class="a-img"><img src="cross.png" alt="[ ✖ supprimer ]" /></a></td>
+                        <td><a href="boutique.php?admin=produit-edit&amp;id=<?php echo $produit["ID"]; ?>" class="a-img"><img src="images/pencil.png" alt="[ ✏ éditer ]" /></a></td>
+                        <td><a href="boutique.php?admin=produit-del&amp;id=<?php echo $produit["ID"]; ?>" class="a-img"><img src="images/cross.png" alt="[ ✖ supprimer ]" /></a></td>
                     </tr>
             <?php    } ?>
                 </table>

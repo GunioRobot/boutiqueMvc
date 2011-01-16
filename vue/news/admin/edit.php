@@ -1,6 +1,9 @@
 <?php printHeader('admin', false, 'administration ~ news', false); ?>
             <div id="admin-news-edit" class="block-middle">
                 <div class="head-block">édition de la news n°<?php echo $id.' : '.$titre; ?></div><br />
+                <div style="text-align:center;">
+                    <a href="news.php?admin=index">[ Gestion des news ]</a> | <a href="news.php?admin=add">[ Ajouter une news ]</a>
+                </div><br />
                 <?php foreach($newsArray as $news){ ?>
                 <form action="news.php?admin=envoiUpdate" method="post" enctype="multipart/form-data" onsubmit="return verifFormNews(this, 1)" >
                     <fieldset style="text-align:left; width:80%; margin:auto;">

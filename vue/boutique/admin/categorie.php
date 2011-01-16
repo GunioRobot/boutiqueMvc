@@ -12,7 +12,7 @@
                 <?php foreach($categoriesArray as $categorie){ ?>
                     <tr>
                         <td><?php echo htmlspecialchars($categorie["nom"]); ?></td>
-                        <td><a href="boutique.php?admin=categorie&amp;id=<?php echo $categorie["nom"]; ?>" class="a-img"><img src="cross.png" alt="[ ✖ supprimer ]" /></a></td>
+                        <td><a href="boutique.php?admin=categorie&amp;id=<?php echo $categorie["nom"]; ?>" class="a-img"><img src="images/cross.png" alt="[ ✖ supprimer ]" /></a></td>
                     </tr>
             <?php    } ?>
                 </table>

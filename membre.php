@@ -22,6 +22,7 @@ elseif (isset($_GET['admin']))
     if(isset($_GET['id'])){$_GET['id'] = (int)$_GET['id'];}
     if($_GET['admin'] == 'del' AND isset($_GET['id'])){ include_once('control/membre/admin/del.php');}
     elseif($_GET['admin'] == 'edit' AND isset($_GET['id'])){ include_once('control/membre/admin/edit.php'); }
+    elseif($_GET['admin'] == 'envoi'){ include_once('control/membre/admin/envoi.php'); }
 
     else{include_once('control/membre/admin/index.php'); }
 }

@@ -18,22 +18,6 @@ $rgxMail = array('#^[a-zA-Z0-9._-]+@[a-z0-9._-]{1,}\.[a-z]{2,4}$#', '2', '4');
 $rgxNombre = array('#^[0-9]+$#', '1', '');
 $rgxDate = array('#^[\d]{4}-[\d]{2}-[\d]{2} [\d]{2}:[\d]{2}:[\d]{2}$#', '19', '19');
 
-/*function connectBDD()
-{
-// Fonction de connexion à la base de données, qui retourne l'objet $bdd
-//Les informations de connexions sont définis dans un fichier à part, plus pratique lorsqu'on change de plateforme d'hébergements lors du développement
-    global $dbServ, $dbBase, $dbUser, $dbPass;
-    try
-    {
-        $bdd = new PDO('mysql:host='.$dbServ.';dbname='.$dbBase.'', $dbUser, $dbPass);
-    }
-    catch(Exception $e)
-    {
-        die('<br /><br /><br /><div style="text-align:center;">Erreur : '.$e->getMessage().'</div>');
-    }
-    return $bdd;
-}*/
-
 function insertFlood($ip){
     global $bdd;
 
@@ -361,13 +345,13 @@ global $titreWebSite, $sloganWebSite;
         <div id="colonne-centre" class="middle">
 <?php }
 
-function printFooter($pageIsAdmin){
+function printFooter(){
 //Fonction postFooter : fermeture de la structure ouverte par le postHeader, affichage du copyright
     ?>
         </div>
 
         <div id="clear-colonnes" class="clear_float"></div>
-        <div id="footer" style="text-align:center;"><br />Copyright <a href="http://www.romainbeuque.fr/">Romain Beuque</a> - <a href="<?php if(isset($pageIsAdmin) AND $pageIsAdmin == true){echo '../';} ?>equipe.php">Renan Lossouarn</a></div>
+        <div id="footer" style="text-align:center;"><br />Copyright <a href="http://www.romainbeuque.fr/">Romain Beuque</a> - <a href="equipe.php">Renan Lossouarn</a></div>
     </div>
 
 </body>

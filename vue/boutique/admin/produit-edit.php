@@ -1,5 +1,5 @@
-<?php foreach($produitArray as $produit){printHeader('admin', false, 'administration : ajouter un produit', true);  ?>
-<div id="admin-add-product" class="block-middle">
+<?php foreach($produitArray as $produit){printHeader('admin', false, 'administration : éditer un produit', true);  ?>
+            <div id="admin-add-product" class="block-middle">
                 <div class="head-block">éditer le produit n°<?php echo htmlspecialchars($_GET['id']);?></div><br />
                 <form action="boutique.php?admin=produit-envoi" method="post" enctype="multipart/form-data"  onsubmit="return verifFormAddProduit(this)">
                     <fieldset style="text-align:left; width:80%; margin:auto;">

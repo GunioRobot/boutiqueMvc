@@ -2,7 +2,7 @@
                 <div id="register-form" class="block-middle" style="text-align:center;">
                 <div class="head-block">enregistrement d'un nouveau membre</div>
                 <br />
-                <a href="membre.php?op=login" class="a-img"><img src="login.png" alt="Déjà inscris ? Accéder à la page de connexion" style="padding-bottom:8px;"/></a>
+                <a href="membre.php?op=login" class="a-img"><img src="images/login.png" alt="Déjà inscris ? Accéder à la page de connexion" style="padding-bottom:8px;"/></a>
                 <br /><br />
                  <form action="membre.php?op=registerEnvoi" method="post" enctype="multipart/form-data" id="formulaire-register"  onsubmit="return verifFormMembreRegister(this)">
                     <fieldset style="text-align:left; width:80%; margin:auto;">
