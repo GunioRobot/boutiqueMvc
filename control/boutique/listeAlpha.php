@@ -18,6 +18,7 @@ $nbPages=(int)($nbProduits/$produitsParPage)+1;
         include_once('vue/boutique/listeProduits.php');
     }
     else {
-        $js = false; $admin= false; $page = 'boutique'; $titreErreur = 'boutique - erreur'; $erreur = 'Aucun produit ne se trouve sur cette page!';
+        $js = false; $redirect[0] = $url; $redirect[1] = '3';
+        $page = 'boutique'; $titreErreur = 'boutique - erreur'; $erreur = 'Aucun produit sur cette page!';
         include_once('vue/erreur.php');
     }

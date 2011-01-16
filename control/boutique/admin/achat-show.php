@@ -5,7 +5,8 @@ $id = (int)$_GET['id']; // id du get, pour la sélection de la news
 $achatArray = getAchat($id);
 foreach ($achatArray as $achat){$nom = $achat['nom'];} //on récup le titre --> affichage titre
 if(!isset($nom)){
-    $js = false; $admin= false; $page = 'admin'; $titreErreur = 'administration : boutique - erreur';
+    $js = false; $redirect[0] = 'boutique.php?admin=achat'; $redirect[1] = '3';
+    $page = 'admin'; $titreErreur = 'administration : boutique - erreur';
     $erreur = 'Cet achat n\'existe pas !';
     include_once('vue/erreur.php');
 }

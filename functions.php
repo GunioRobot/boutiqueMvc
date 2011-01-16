@@ -47,13 +47,14 @@ function selectFlood($ip){
 function menu_top($page)
 {
     global $bdd;
-//affichage du menu de haut de page
-//les pages administrateur se trouvant dans un dossier séparé, le paramètre $isAdmin indique si la page se trouve dans le dossier isAdmin, pour permettre le passage au dossier parent lorsque nécessaire
-//la variable $page permet de colorer l'élément du menu sur lequel on se trouve actuellement, en rajoutant la classe 'active'
-    echo '<a href="index.php"'; if($page == 'accueil'){ echo ' class="active" '; } echo '>Accueil</a>';
-    echo ' ~ <a href="boutique.php"'; if($page == 'boutique'){ echo ' class="active" '; } echo '>Boutique</a>';
-    echo ' ~ <a href="contact.php"'; if($page == 'contact'){ echo ' class="active" '; } echo '>Contact</a>';
-    echo ' ~ <a href="equipe.php"'; if($page == 'equipe'){ echo ' class="active" '; } echo '>Equipe</a>';
+    echo '<a href="index.php"'; if($page == 'accueil'){ echo ' class="active" '; } echo '>Accueil</a>
+        ';
+    echo ' ~ <a href="boutique.php"'; if($page == 'boutique'){ echo ' class="active" '; } echo '>Boutique</a>
+        ';
+    echo ' ~ <a href="contact.php"'; if($page == 'contact'){ echo ' class="active" '; } echo '>Contact</a>
+        ';
+    echo ' ~ <a href="equipe.php"'; if($page == 'equipe'){ echo ' class="active" '; } echo '>Equipe</a>
+        ';
 //pour l'affichage des éléments Inscription / Connexion, il faut que le membre ne soit pas déjà connecté
     if ($_SESSION['login'] == false) {
         echo ' | | <a href="membre.php?op=register"'; if($page == 'membre-register'){ echo ' class="active" '; } echo '>Inscription</a>';
@@ -322,7 +323,7 @@ global $titreWebSite, $sloganWebSite;
   <title><?php echo $titreWebSite.' - '.$sloganWebSite.' || '.$titre; ?></title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <?php if($redirect){ ?><meta http-equiv="refresh" content="2; url=<?php echo $redirect; ?>" /><?php } ?>
+  <?php if($redirect){ ?><meta http-equiv="refresh" content="<?php echo $redirect[1]; ?>; url=<?php echo $redirect[0]; ?>" /><?php } ?>
   <?php if($js){?><script type="text/javascript" src="script.js"></script><?php }?>
 </head>
 

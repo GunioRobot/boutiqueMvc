@@ -25,6 +25,7 @@ $nbPages=(int)($nbCategories/$produitsParPage)+1;
         include_once('vue/boutique/admin/categorie.php');
     }
     else {
-        $js = false; $admin= false; $page = 'admin'; $titreErreur = 'administration ~ boutique - erreur'; $erreur = 'Aucune catégorie dans cette boutique!';
+        $js = false; $redirect[0] = $url; $redirect[1] = '3';
+        $page = 'admin'; $titreErreur = 'administration ~ boutique - erreur'; $erreur = 'Aucune catégorie sur cette page!';
         include_once('vue/erreur.php');
     }

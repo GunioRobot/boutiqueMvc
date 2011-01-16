@@ -16,6 +16,7 @@ $nbPages=(int)($nbProduits/$produitsParPage)+1;
         include_once('vue/boutique/admin/index.php');
     }
     else {
-        $js = false; $admin= false; $page = 'admin'; $titreErreur = 'administration ~ boutique - erreur'; $erreur = 'Aucun produit dans cette boutique!';
+        $js = false; $redirect[0] = $url; $redirect[1] = '3';
+        $page = 'admin'; $titreErreur = 'administration ~ boutique - erreur'; $erreur = 'Aucun produit sur cette page!';
         include_once('vue/erreur.php');
     }

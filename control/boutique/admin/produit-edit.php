@@ -8,7 +8,8 @@ $id = $_GET['id']; // id du get, pour la sélection de la news
 $produitArray = getFiche($id);
 foreach ($produitArray as $produit){$titre = $produit['titre'];} //on récup le titre --> affichage titre
 if(!isset($titre)){
-    $js = false; $admin= false; $page = 'accueil'; $titreErreur = 'administration : boutique - erreur';
+    $js = false; $redirect[0] = 'boutique.php?admin=index'; $redirect[1] = '3';
+    $page = 'accueil'; $titreErreur = 'administration : boutique - erreur';
     $erreur = 'Ce produit n\'existe pas !';
     include_once('vue/erreur.php');
 }
