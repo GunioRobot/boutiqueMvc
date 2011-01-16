@@ -2,7 +2,7 @@
 session_start();
 include_once('modele/connexion_sql.php');
 
-$produitsParPage = 3;
+$produitsParPage = 10;
 
 if(isset($_GET['top']))
 {
@@ -36,10 +36,15 @@ elseif (isset($_GET['produit']))
 elseif (isset($_GET['admin']))
 {
     switch ($_GET['admin']) {
+    case 'produit-envoi': include_once('control/boutique/admin/produit-envoi.php'); break;
     case 'produit-edit': include_once('control/boutique/admin/produit-edit.php'); break;
     case 'produit-del': include_once('control/boutique/admin/produit-del.php'); break;
+    case 'produit-add': include_once('control/boutique/admin/produit-add.php'); break;
     case 'achat': include_once('control/boutique/admin/achat.php'); break;
+    case 'achat-show': include_once('control/boutique/admin/achat-show.php'); break;
+    case 'achat-del': include_once('control/boutique/admin/achat-del.php'); break;
     case 'categorie': include_once('control/boutique/admin/categorie.php'); break;
+    
     case 'del': include_once('control/boutique/admin/delete.php'); break;
 
     default: include_once('control/boutique/admin/index.php'); break;

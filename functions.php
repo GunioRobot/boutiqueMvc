@@ -13,7 +13,7 @@ $rgxTitre = array("#^[a-zA-Z_'\-.`0-9_é èâ\"àê!:;,/.?)(ëç@&]{1,100}$#", '
 $rgxAdresse = array("#^[a-zA-Z_é' èà0-9ê,ëâç-]{10,100}$#", '10', '100');
 $rgxPassword = array('#^.{4,45}$#', '4', '45');
 $rgxPostal = array('#^[0-9]{5}$#', '5', '5');
-$rgxPrix = array('#^[0-9]{1,8}.[0-9]{0,2}$#', '0', '2');
+$rgxPrix = array('#^[0-9]{1,8}.?[0-9]{0,2}$#', '1', '11');
 $rgxMail = array('#^[a-zA-Z0-9._-]+@[a-z0-9._-]{1,}\.[a-z]{2,4}$#', '2', '4');
 $rgxNombre = array('#^[0-9]+$#', '1', '');
 $rgxDate = array('#^[\d]{4}-[\d]{2}-[\d]{2} [\d]{2}:[\d]{2}:[\d]{2}$#', '19', '19');
@@ -162,8 +162,8 @@ function blockTop1(){
                 <div class="head-block">top 1</div>';
     $req = $bdd->query('SELECT * FROM produits ORDER BY achat DESC LIMIT 0,1 ') or die(print_r($bdd->errorInfo()));
     $temp = $req->fetch();
-    echo '<a href="fiche.php?id='. $temp['ID'] .'" class="a-img"><img src="'. $temp['image'] .'" alt="'. $temp['titre'] .'" style="max-width:175px; max-height:250px;" /></a><br />
-    <a href="fiche.php?id='. $temp['ID'] .'" >'. $temp['titre'] .' (acheté '. $temp['achat'] .' fois)</a>';
+    echo '<a href="boutique.php?produit='. $temp['ID'] .'" class="a-img"><img src="'. $temp['image'] .'" alt="'. $temp['titre'] .'" style="max-width:175px; max-height:250px;" /></a><br />
+    <a href="boutique.php?produit='. $temp['ID'] .'" >'. $temp['titre'] .' (acheté '. $temp['achat'] .' fois)</a>';
     $req->closeCursor();
     echo'
             </div>';
@@ -280,7 +280,7 @@ if(!$_SESSION['login']){
 
 
 function verificationFormulaire($variableAVerifier, $pregmatch, $messageErreur, $texteDefaut){
-    if(empty($variableAVerifier))
+    if($variableAVerifier == '')
     {
         $message = $messageErreur.' (champs vide)';
         return $message;

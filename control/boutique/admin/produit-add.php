@@ -1,7 +1,5 @@
-<?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+<?php include("functions.php"); checkLogin(); verifUserIsAdmin();
+include_once('modele/boutique/getListCategories.php');
+$categoriesArray = getListCategories();
 
-?>
+include_once('vue/boutique/admin/produit-add.php');

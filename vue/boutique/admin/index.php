@@ -2,7 +2,7 @@
             <div id="admin-boutique" class="block-middle">
                 <div class="head-block">boutique</div><br />
                 <div style="text-align:center;">
-                    <a href="boutique.php?admin=produit-add">[ Ajouter un produit ]</a> | <a href="boutique.php?admin=achat">[ Gestion des achats ]</a> | <a href="boutique.php?admin=categorie">[ Gestion des catégories ]</a>
+                    <a href="boutique.php?admin=index" class="active">[ Geston des produits ]</a> | <a href="boutique.php?admin=produit-add">[ Ajouter un produit ]</a> | <a href="boutique.php?admin=achat">[ Gestion des achats ]</a> | <a href="boutique.php?admin=categorie">[ Gestion des catégories ]</a>
                 </div><br />
                 <table style="width:100%; text-align:center;">
                 <tr>
@@ -25,4 +25,4 @@
             <?php    } ?>
                 </table>
             </div>
-<?php printFooter(false); ?>
+<?php paginationListPages($nbPages, $page, $url); printFooter(false); ?>
