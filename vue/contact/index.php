@@ -38,10 +38,10 @@
                                     </select>
                                 </td>
                             </tr>
-                            <tr>
+                            <?php if(!$_SESSION['login']){?><tr>
                                 <td>Code de vérification :</td>
-                                <td><?php //echo recaptcha_get_html($publickey); ?></td>
-                            </tr>
+                                <td><?php echo recaptcha_get_html($publickey); ?></td>
+                            </tr><?php }?>
                             <tr>
                                 <td colspan="2" style="text-align:center;">
                                     <br /><input type="reset" value="Réinitialiser" onclick="reinistialiseContact();"/>
@@ -55,4 +55,4 @@
                     </fieldset>
                 </form>
             </div>
-<?php } printFooter(false); ?>
+<?php } printFooter(); ?>

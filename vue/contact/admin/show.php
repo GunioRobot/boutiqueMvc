@@ -26,4 +26,4 @@ foreach ($messageArray as $message) { ?>
                 </table>
         </div>
 <?php }
-printFooter(false); ?>
+printFooter(); ?>

@@ -1,12 +1,14 @@
 <?php include("functions.php"); checkLogin();
 //si l'utilisateur est déjà connecté, on ne va pas lui permettre de se ré-inscrire
     if($_SESSION['login']){
-        $js = false; $admin= false; $page = 'membre-register'; $titreErreur = 'inscription - erreur';
+        $js = false; $redirect[0] = 'membre.php?op=panel'; $redirect[1] = '1';
+        $page = 'membre-register'; $titreErreur = 'inscription - erreur';
         $erreur = 'Vous êtes déjà connecté, impossible de vous re-inscrire !';
         include_once('vue/erreur.php'); die;
     }
     if(!isset($_POST['pseudo']) OR !isset($_POST['mail']) OR !isset($_POST['password']) OR !isset($_POST['password2'])){
-        $js = false; $admin= false; $page = 'membre-register'; $titreErreur = 'inscription - erreur'; 
+        $js = false; $redirect[0] = 'membre.php?op=register'; $redirect[1] = '1';
+        $page = 'membre-register'; $titreErreur = 'inscription - erreur';
         $erreur = 'Erreur : champ non défini<br />Impossible de répondre à votre requète';
         include_once('vue/erreur.php'); die;
     }

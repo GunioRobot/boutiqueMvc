@@ -1,10 +1,9 @@
 <?php printHeader('membre-login', false, 'connexion', true); ?>
-
             <div id="login-form" class="block-middle" style="text-align:center;">
                 <div class="head-block">identification</div>
                 <br />
                 <a href="membre.php?op=register" class="a-img"><img src="images/register.png" alt="Pas encore membre ? Inscrivez-vous ici" style="padding-bottom:8px;"/></a>
-                <br /><br />
+                <br />
                 <form action="membre.php?op=loginEnvoi" method="post" enctype="multipart/form-data" id="formulaire-login" onsubmit="return verifFormMembreLogin(this)">
                     <fieldset style="text-align:left; width:80%; margin:auto;">
                         <legend>Formulaire de connexion</legend><br />
@@ -32,4 +31,4 @@
                 </form>
             </div>
 
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

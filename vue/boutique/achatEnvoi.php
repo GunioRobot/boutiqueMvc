@@ -33,4 +33,4 @@
             <strong>Le paiement est réel, mais aucun produit ne vous sera pas expédié. Au cas où vous avez acheté par erreur, écrivez moi à <img src="http://dl.dropbox.com/u/2484594/test-adresse.png" alt="mon-adresse-email-protegee-des-bots-spammeurs" style="vertical-align:middle;"/> pour votre remboursement !</strong></div>
             <?php } ?>     <br /><br />
             </div>
-<?php printFooter(false);} ?>
+<?php printFooter();} ?>

@@ -4,4 +4,4 @@
                 <div style="text-align:center;">Achat correctement supprimé<br /><br />
                     <a href="boutique.php?admin=achat">[ Retourner à la gestion des achats ]</a></div>
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

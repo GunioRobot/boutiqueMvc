@@ -1,13 +1,15 @@
 <?php include("functions.php"); checkLogin();
 
     if(!isset($_POST['nom']) OR !isset($_POST['prenom']) OR !isset($_POST['adresse']) OR !isset($_POST['mail']) OR !isset($_POST['codepostal']) OR !isset($_POST['ville']) OR !isset($_POST['pays'])){
-        $js = false; $admin= false; $page = 'membre-panel'; $titreErreur = 'espace membre -- erreur';
+        $js = false; $redirect[0] = 'membre.php?op=panel'; $redirect[1] = '1';
+        $page = 'membre-panel'; $titreErreur = 'espace membre -- erreur';
         $erreur = 'Erreur : champ non défini<br />Impossible de répondre à votre requète';
         include_once('vue/erreur.php'); die;
     }
 
     if(!$_SESSION['login']){
-        $js = false; $admin= false; $page = 'membre-panel'; $titreErreur = 'espace membre - erreur';
+        $js = false; $redirect[0] = 'membre.php?op=login'; $redirect[1] = '1';
+        $page = 'membre-panel'; $titreErreur = 'espace membre - erreur';
         $erreur = 'Vous n\'êtes pas connecté, impossible d\'accéder à l\'espace membre !';
         include_once('vue/erreur.php'); die;
     }

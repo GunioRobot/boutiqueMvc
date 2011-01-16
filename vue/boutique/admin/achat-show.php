@@ -27,4 +27,4 @@ foreach ($achatArray as $achat) { ?>
                     </tr>
                 </table>
         </div>
-<?php } printFooter(false); ?>
+<?php } printFooter(); ?>

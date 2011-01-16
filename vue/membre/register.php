@@ -48,4 +48,4 @@
 
             </div><?php
 
-printFooter(false); ?>
+printFooter(); ?>

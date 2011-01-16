@@ -8,7 +8,7 @@ body {
     font-family: Georgia,'Times New Roman',times,serif;
     font-size: 11px;
 }
-.main {
+#main {
     width:990px;
     background-image: url("middle-font.png");
     margin-left:auto; margin-right:auto;

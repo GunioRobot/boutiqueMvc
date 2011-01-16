@@ -13,7 +13,9 @@ if(isset($_GET['op']))
         case 'registerEnvoi': include_once('control/membre/registerEnvoi.php'); break;
         case 'panel': include_once('control/membre/panel.php'); break;
         case 'panelEnvoi': include_once('control/membre/panelEnvoi.php'); break;
-        default:
+        default:     $js = false; $redirect[0] = 'membre.php?op=panel'; $redirect[1] = '1';
+        $page = 'membre'; $titreErreur = 'membre - erreur'; $erreur = 'Aucune information sur cette page!';
+        include_once('functions.php'); include_once('vue/erreur.php'); die;
             break;
     }
 }
@@ -28,6 +30,7 @@ elseif (isset($_GET['admin']))
 }
 else
 {
-    $js = false; $admin= false; $page = 'membre'; $titreErreur = 'membre - erreur'; $erreur = 'Aucune information sur cette page!';
+    $js = false; $redirect[0] = 'membre.php?op=panel'; $redirect[1] = '1';
+    $page = 'membre'; $titreErreur = 'membre - erreur'; $erreur = 'Aucune information sur cette page!';
         include_once('functions.php'); include_once('vue/erreur.php'); die;
 }

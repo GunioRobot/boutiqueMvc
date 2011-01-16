@@ -1,7 +1,11 @@
 //fonction del_achat : fonction qui demande une confirmation pour la suppression d'un achat membre
 function del_achat(produit, membre, id) {
     if (confirm('Vous êtes sur le point de supprimer l\'achat de '+produit+' effectué par '+membre+' ! Continuer ?'))
-        {document.location.href = 'achat.php?op=del&id='+id;}
+        {document.location.href = 'boutique.php?admin=achat-del&id='+id;}
+}
+function confirmUrl(message, url) {
+    if (confirm(message+' ! Continuer ?'))
+        {document.location.href = url;}
 }
 
 function surligne(champ, erreur)

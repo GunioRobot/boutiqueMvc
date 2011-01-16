@@ -23,4 +23,4 @@
 <?php } ?>
                     </table>
                 </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

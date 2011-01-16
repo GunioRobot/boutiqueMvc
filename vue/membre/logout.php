@@ -1,6 +1,5 @@
-<?php printHeader('membre-logout', false, 'déconnexion', false);
-echo '<script language="javascript">alert("Deconnexion ... \nVous êtes maintenant déconnecté. Cookies supprimés!")</script>';
-echo '<script language="javascript">window.location = "index.php"</script>';
+<?php $redirect[0]= 'index.php'; $redirect[1]='3';
+printHeader('membre-logout', $redirect, 'déconnexion', false);
 
 //dans le cas où l'utilisateur a désactivé le javascript, on affiche un message simple qui ne fait pas de redirection automatique ?>
 <div id="logout" class="block-middle" style="text-align:center;">
@@ -9,4 +8,4 @@ echo '<script language="javascript">window.location = "index.php"</script>';
                 La déconnexion volontaire a supprimé les cookies de re-connexion automatique. <br /><br />
                 <a href="index.php">Accueil</a>
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

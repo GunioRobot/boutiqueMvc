@@ -4,4 +4,4 @@
                 <div style="text-align:center;">News correctement supprimée<br /><br />
                     <a href="news.php?admin=index">[ Retourner à la gestion des news ]</a></div>
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

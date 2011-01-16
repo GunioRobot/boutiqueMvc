@@ -1,4 +1,4 @@
-<?php printHeader('admin', false, 'administration ~ boutique', false);?>
+<?php printHeader('admin', false, 'administration ~ boutique', true);?>
             <div id="admin-boutique" class="block-middle">
                 <div class="head-block">gestion des achats</div><br />
                 <div style="text-align:center;">
@@ -18,9 +18,9 @@
                         <td>(<?php echo htmlspecialchars($achat["ID_produit"]).') '.htmlspecialchars($achat["titre"]);?></td>
                         <td><?php if($achat['ID_membre']){?><em style="text-decoration:underline;"><?php } echo htmlspecialchars($achat["prenom"]).' '.htmlspecialchars($achat["nom"]); if($achat['ID_membre']){?></em> (<?php echo $achat['ID_membre'] .')';} ?></td>
                         <td><a href="boutique.php?admin=achat-show&amp;id=<?php echo $achat["ID"];?>" class="a-img"><img src="images/eye.png" alt="[ ☉ voir ]" /></a></td>
-                        <td><a href="javascript:del_achat('<?php echo $achat["titre"];?>', '<?php echo $achat["nom"];?>', '<?php echo $achat["ID"];?>');" class="a-img"><img src="images/cross.png" alt="[ ✖ traiter ]" /></a></td>
+                        <td><a href="javascript:confirmUrl('Vous êtes sur le point de supprimer l\'achat de <?php echo $achat["titre"];?> effectué par <?php echo $achat["prenom"]. ' '.$achat["nom"];?>', 'boutique.php?admin=achat-del&amp;id=<?php echo $achat["ID"];?>');" class="a-img"><img src="images/cross.png" alt="[ ✖ traiter ]" /></a></td>
                     </tr>
             <?php    } ?>
                 </table>
             </div>
-<?php paginationListPages($nbPages, $page, $url); printFooter(false); ?>
+<?php paginationListPages($nbPages, $page, $url); printFooter(); ?>

@@ -1,5 +1,4 @@
-<?php
-printHeader('accueil', false, 'news : '.$titre, false);
+<?php printHeader('accueil', false, 'news : '.$titre, false);
 foreach ($newsArray as $news) {
     if($admin == 1){ ?>
             <div style="text-align:right; padding-bottom: 4px;">
@@ -16,4 +15,4 @@ foreach ($newsArray as $news) {
 <?php }
 
    
-printFooter(false);
+printFooter();

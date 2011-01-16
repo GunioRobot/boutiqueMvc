@@ -1,13 +1,15 @@
 <?php include("functions.php"); checkLogin();
 
     if($_SESSION['login']){
-        $js = false; $admin= false; $page = 'membre-login'; $titreErreur = 'connexion - erreur';
+        $js = false; $redirect[0] = 'membre.php?op=panel'; $redirect[1] = '1';
+        $page = 'membre-login'; $titreErreur = 'connexion - erreur';
         $erreur = 'Vous êtes déjà connecté, impossible de vous re-connecté !';
         include_once('vue/erreur.php'); die;
     }
 
     if(!isset($_POST['pseudo']) OR !isset($_POST['password'])){
-        $js = false; $admin= false; $page = 'membre-register'; $titreErreur = 'connexion - erreur';
+        $js = false; $redirect[0] = 'membre.php?op=login'; $redirect[1] = '1';
+        $page = 'membre-register'; $titreErreur = 'connexion - erreur';
         $erreur = 'Erreur : champ non défini<br />Impossible de répondre à votre requète';
         include_once('vue/erreur.php'); die;
     }

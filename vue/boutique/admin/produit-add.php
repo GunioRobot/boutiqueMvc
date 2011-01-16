@@ -1,5 +1,5 @@
 <?php printHeader('admin', false, 'administration : ajouter un produit', true);  ?>
-<div id="admin-add-product" class="block-middle">
+            <div id="admin-add-product" class="block-middle">
                 <div class="head-block">ajouter un produit</div><br />
                 <div style="text-align:center;">
                     <a href="boutique.php?admin=index">[ Geston des produits ]</a> | <a href="boutique.php?admin=produit-add" class="active">[ Ajouter un produit ]</a> | <a href="boutique.php?admin=achat">[ Gestion des achats ]</a> | <a href="boutique.php?admin=categorie">[ Gestion des catégories ]</a>
@@ -50,4 +50,4 @@
                     </fieldset>
                 </form>
             </div>
-<?php printFooter(false);?>
+<?php printFooter();?>

@@ -181,55 +181,21 @@ function checkLogin(){
 function verifUserIsAdmin(){
 //fonction verifUserIsAdmin : fonction qui vérifie dans la base de donnée si l'utilisateur est administrateur et est autorisé à accéder à des pages protégés
     //si l'utilisateur est connecté, on va vérifier ses accréditations
-    if($_SESSION['login'] == true){
-        global $bdd;
-        $req = $bdd->prepare('SELECT admin FROM membres WHERE ID = ? ');
-        $req->execute(array($_SESSION['ID'])) or die(print_r($req->errorInfo()));
-        $donnees = $req->fetch();
-        //on a récupérer l'information admin sur le membre en cours. vérification de ses accréditations
-        if ($donnees['admin'] != '1'){
-            //l'utilisateur a une infos 'admin' différente de 1 : il n'est pas admin
-            $go = 'notAdmin';
+    if($_SESSION['login']){
+        $admin = areYouAdmin();
+        if($admin){
+            return '';
         }
-        //sinon, il est admin
-        else {$go = 'isAdmin';}
-        $req->closeCursor();
+        else{
+            $js = false; $redirect[0] = 'index.php'; $redirect[1] = '3';
+            $page = 'admin'; $titreErreur = 'administration ~ erreur'; $erreur = 'Vous n\'êtes pas administrateur! <br />Vous ne pouvez donc pas accéder à cette page!';
+            include_once('vue/erreur.php'); die;
+        }
     }
-    //si l'utilisateur n'est pas connecté, il pourrait être admin, mais on ne peut le vérifier, on lui demande de se connecter
-    else {$go = 'notLogged';}
-    switch ($go)
-    {
-        //cas où l'utilisateur est Administrateur : on ne fait rien, il aura accès à la page
-        case 'isAdmin':
-        break;
-
-        //cas où l'utilisateur n'est pas Administrateur : affichage d'une erreur javascript puis redirection vers l'espace membre
-        case 'notAdmin': printHeader('erreur-admin', true, 'Boutique - Erreur - Administration', true);
-        echo '<script language="javascript">alert("Vous n\'êtes pas administrateur! \nVous ne pouvez donc pas accéder à cette page")</script>';
-        echo '<script language="javascript">window.location = "../membre.php?op=panel"</script>';
-        //si l'utilisateur a désactivé le javascript, il ne faut pas qu'il puisse accéder à l'admin en outrepassant le script
-        echo '<div id="administration-menu" class="block-middle" style="text-align:center;">
-                <div class="head-block">administration</div><br />
-                <strong>Erreur : </strong>Vous n\'êtes pas administrateur! <br />
-                Vous ne pouvez donc pas accéder à cette page <br /><br />
-                <a href="../index.php">Retour à la page d\'accueil</a>
-            </div>';
-        printFooter();
-        die; break;
-
-        //cas où l'utilisateur n'est pas connecté : affichage d'une erreur javascript puis redirection vers la page de connexion
-        case 'notLogged': printHeader('erreur-admin', true, 'Boutique - Erreur - Administration', true);
-        echo '<script language="javascript">alert("Vous n\'êtes pas connecté! \nVous ne pouvez donc pas accéder à cette page")</script>';
-        echo '<script language="javascript">window.location = "../membre.php?op=login"</script>';
-        //si l'utilisateur a désactivé le javascript, il ne faut pas qu'il puisse accéder à l'admin en outrepassant le script
-        echo '<div id="administration-menu" class="block-middle" style="text-align:center;">
-                <div class="head-block">administration</div><br />
-                <strong>Erreur : </strong>Vous n\'êtes pas connecté! <br />
-                Vous ne pouvez donc pas accéder à cette page <br /><br />
-                <a href="../membre.php?op=login">Connexion</a>
-            </div>';
-        printFooter();
-        die; break;
+    else {
+        $js = false; $redirect[0] = 'membre.php?op=login'; $redirect[1] = '3';
+        $page = 'admin'; $titreErreur = 'administration ~ erreur'; $erreur = 'Vous n\'êtes pas connecté! <br />Vous ne pouvez donc pas accéder à cette page.';
+        include_once('vue/erreur.php'); die;
     }
 }
 
@@ -328,7 +294,7 @@ global $titreWebSite, $sloganWebSite;
 </head>
 
 <body>
-    <div id="main" class="main">
+    <div id="main">
         <div id="header" class="header">
             <img src="header.png" alt="header"/>
         </div>

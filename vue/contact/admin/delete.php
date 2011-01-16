@@ -3,4 +3,4 @@
                 <div class="head-block">suppression du message n°<?php echo $id; ?></div><br />
                 <div style="text-align:center;"><br />Message correctement supprimé</div>
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

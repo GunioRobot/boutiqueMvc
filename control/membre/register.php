@@ -1,7 +1,8 @@
 <?php include("functions.php"); checkLogin();
 //si l'utilisateur est déjà connecté, on ne va pas lui permettre de se ré-inscrire
     if($_SESSION['login']){
-        $js = false; $admin= false; $page = 'membre-register'; $titreErreur = 'inscription - erreur'; $erreur = 'Vous êtes déjà connecté, impossible de vous re-inscrire !';
+        $js = false; $redirect[0] = 'membre.php?op=panel'; $redirect[1] = '1';
+        $page = 'membre-register'; $titreErreur = 'inscription - erreur'; $erreur = 'Vous êtes déjà connecté, impossible de vous re-inscrire !';
         include_once('vue/erreur.php'); die;
     }
     else {

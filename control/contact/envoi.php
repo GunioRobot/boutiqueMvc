@@ -10,19 +10,20 @@ include_once('modele/contact/envoi.php');
     $send[] = verificationFormulaire($_POST['mail'], $rgxMail, 'Erreur dans votre adresse email', false); //vérification de la valeur mail
     $send[] = verificationFormulaire($_POST['message'], false, 'Erreur dans votre message', 'Écrivez votre message...'); //vérification de la valeur message
 
-//    //RECPATCHA
-//    require_once('recaptchalib.php');
-//    $privatekey = "6LeY-7kSAAAAAH4Jey7PnR2tbV1G3bmYhmIC2KJH";
-//    $resp = recaptcha_check_answer ($privatekey,
-//                                $_SERVER["REMOTE_ADDR"],
-//                                $_POST["recaptcha_challenge_field"],
-//                                $_POST["recaptcha_response_field"]);
-//
-//    if (!$resp->is_valid) {
-//    // What happens when the CAPTCHA was entered incorrectly
-//    $send[]= "Le code de sécurité n'a pas été rempli correctement. " .
-//         "(Veuillez ré-essayer. Erreur : " . $resp->error . ")";
-//    }
+    if(!$_SESSION['login']){
+    //RECPATCHA
+    require_once('recaptchalib.php');
+    $privatekey = "6LeY-7kSAAAAAH4Jey7PnR2tbV1G3bmYhmIC2KJH";
+    $resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
+
+    if (!$resp->is_valid) {
+    // What happens when the CAPTCHA was entered incorrectly
+    $send[]= "Le code de sécurité n'a pas été rempli correctement. " .
+         "(Veuillez ré-essayer. Erreur : " . $resp->error . ")";
+    }}
 
     //ENVOI FLOOD BDD
     $time = time();

@@ -43,4 +43,4 @@
                 </form><br />
                 <?php } ?>
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

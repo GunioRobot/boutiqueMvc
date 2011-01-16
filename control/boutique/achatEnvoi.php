@@ -11,19 +11,20 @@ include_once('modele/boutique/achatEnvoi.php');
     $send[] = verificationFormulaire($_POST['ID_produit'], $rgxNombre, 'Erreur dans votre n° de produit. Si cette erreur apparait, veuillez ne pas manipuler le code source ou <a href="contact.php">contacter l\'admin</a>. ', false); //vérification de la valeur ID_produit
     
 
-//    //RECPATCHA
-//    require_once('recaptchalib.php');
-//    $privatekey = "6LeY-7kSAAAAAH4Jey7PnR2tbV1G3bmYhmIC2KJH";
-//    $resp = recaptcha_check_answer ($privatekey,
-//                                $_SERVER["REMOTE_ADDR"],
-//                                $_POST["recaptcha_challenge_field"],
-//                                $_POST["recaptcha_response_field"]);
-//
-//    if (!$resp->is_valid) {
-//    // What happens when the CAPTCHA was entered incorrectly
-//    $send[]= "Le code de sécurité n'a pas été rempli correctement. " .
-//         "(Veuillez ré-essayer. Erreur : " . $resp->error . ")";
-//    }
+    if(!$_SESSION['login']){
+    //RECPATCHA
+    require_once('recaptchalib.php');
+    $privatekey = "6LeY-7kSAAAAAH4Jey7PnR2tbV1G3bmYhmIC2KJH";
+    $resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
+
+    if (!$resp->is_valid) {
+    // What happens when the CAPTCHA was entered incorrectly
+    $send[]= "Le code de sécurité n'a pas été rempli correctement. " .
+         "(Veuillez ré-essayer. Erreur : " . $resp->error . ")";
+    }}
 
     //ENVOI FLOOD BDD
     $time = time();

@@ -27,4 +27,4 @@
                     </fieldset>
                 </form><br />
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

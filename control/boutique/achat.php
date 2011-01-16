@@ -21,4 +21,9 @@ if(!$produitArray){
 
 $membreArray = selectInfosMembre();
 
+if(!$_SESSION['login']){
+require_once('recaptchalib.php');
+$publickey = "6LeY-7kSAAAAAP6I1bSIh9elEmQv3XbCTEMOYkVo"; // you got this from the signup page
+}
+
 include_once('vue/boutique/achat.php');

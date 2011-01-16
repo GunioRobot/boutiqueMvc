@@ -52,4 +52,4 @@
                     </fieldset>
                 </form>
             </div>
-<?php printFooter(false);}?>
+<?php printFooter();}?>

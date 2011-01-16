@@ -1,5 +1,4 @@
-<?php
-printHeader('boutique', false, 'boutique', false); ?>
+<?php printHeader('boutique', false, 'boutique', false); ?>
             <div id="top4-middle" class="block-middle">
                 <div class="head-block">top 4</div>
                 <table style="width:100%; text-align:center;">
@@ -31,4 +30,4 @@ printHeader('boutique', false, 'boutique', false); ?>
                 <br/><br/>
                 <a href="boutique.php?op=listAll">Voir tous les produits (sans classement)</a><br /><br />
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

@@ -1,5 +1,6 @@
-<?php if($envoi == 1){ printHeader('membre-login', 'membre.php?op=panel', 'connexion en cours ...', true); }
-else{printHeader('membre-login', false, 'connexion', true);} ?>
+<?php if($envoi == 1){ $redirect[0]= 'membre.php?op=panel'; $redirect[1]='2';}
+else{$redirect=false;}
+printHeader('membre-login', $redirect, 'connexion', true); ?>
             <div id="login-envoi" class="block-middle">
                 <div class="head-block">connexion en cours ...</div><br />
 <?php

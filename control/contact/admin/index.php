@@ -1,7 +1,7 @@
 <?php include("functions.php"); checkLogin(); verifUserIsAdmin();
 include_once ('modele/contact/listContact.php'); include_once ('modele/contact/getMessage.php');
 
-    $contactParPage = 20;
+    $contactParPage = 20; $url = 'contact.php?admin=index';
 //pour la pagination, on va compter le nombre de produits correspondant à notre requète
         $nbMessage = getNombreContact();
         //on souhaite 5 news par page, le nombre de page est égal au nombre de news total divisé par 5.
@@ -20,7 +20,9 @@ include_once ('modele/contact/listContact.php'); include_once ('modele/contact/g
         }
         else //erreur dans le choix de la page (0 -1 etc...)
         {
-            $js = false; $admin= false; $page = 'admin'; $titreErreur = 'administration ~ contact - erreur'; $erreur = 'Aucun message ne se trouve sur cette page!';
+            $js = false; $redirect[0] = $url; $redirect[1] = '3';
+            $page = 'admin'; $titreErreur = 'administration ~ contact - erreur';
+            $erreur = 'Aucun message ne se trouve sur cette page!';
             include_once('vue/erreur.php');
         }
 

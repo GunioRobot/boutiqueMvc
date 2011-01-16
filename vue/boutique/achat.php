@@ -60,6 +60,10 @@ printHeader('boutique', false, 'achat de '.$produit['titre'], true); foreach($me
                                     </select>
                                 </td>
                             </tr>
+                            <?php if(!$_SESSION['login']){?><tr>
+                                <td>Code de vérification :</td>
+                                <td><?php echo recaptcha_get_html($publickey); ?></td>
+                            </tr><?php }?>
                             <tr>
                                 <td colspan="2" style="text-align:center;">
                                     <br /><input type="reset" value="Réinitialiser" onclick="reinistialiseAchat();"/>
@@ -78,4 +82,4 @@ printHeader('boutique', false, 'achat de '.$produit['titre'], true); foreach($me
                 </form>
 <?php } ?>
             </div>
-<?php printFooter(false); }?>
+<?php printFooter(); }?>

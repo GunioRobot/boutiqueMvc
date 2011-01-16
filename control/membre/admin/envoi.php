@@ -3,7 +3,8 @@ include_once('modele/membre/panel_updateDatas.php');
 
 
     if(!isset($_POST['nom']) OR !isset($_POST['prenom']) OR !isset($_POST['adresse']) OR !isset($_POST['mail']) OR !isset($_POST['codepostal']) OR !isset($_POST['ville']) OR !isset($_POST['pays'])){
-        $js = false; $redirect= false; $page = 'admin'; $titreErreur = 'administration ~ membre : erreur';
+        $js = false; $redirect[0] = 'membre.php?admin=index'; $redirect[1] = '1';
+        $page = 'admin'; $titreErreur = 'administration ~ membre : erreur';
         $erreur = 'Erreur : champ non défini<br />Impossible de répondre à votre requète';
         include_once('vue/erreur.php'); die;
     }

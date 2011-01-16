@@ -25,4 +25,4 @@
             <?php    } ?>
                 </table>
             </div>
-<?php paginationListPages($nbPages, $page, $url); printFooter(false); ?>
+<?php paginationListPages($nbPages, $page, $url); printFooter(); ?>

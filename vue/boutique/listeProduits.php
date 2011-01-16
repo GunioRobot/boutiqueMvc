@@ -16,4 +16,4 @@
         //affichage de la pagination : numéros de pages en bas de la fenètre
         paginationListPages($nbPages, $page, $url);
 
- printFooter(false); ?>
+ printFooter(); ?>

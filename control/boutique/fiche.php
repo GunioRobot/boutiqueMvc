@@ -19,6 +19,8 @@ if(!$produitArray){
     include_once('vue/erreur.php');
     die;
 }
+$admin = areYouAdmin();
+
 
 foreach($produitArray as $element){$titreProduit = $element['titre'];}
 

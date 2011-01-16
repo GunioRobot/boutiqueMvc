@@ -1,5 +1,4 @@
-<?php
-printHeader('accueil', false, 'accueil', false); 
+<?php printHeader('accueil', false, 'accueil', false); 
 foreach ($newsArray as $news) { ?>
             <div id="news-<?php echo $news['ID']; ?>" class="block-middle">
                 <div class="head-block"><a href="news.php?id=<?php echo $news['ID'].'">'.$news['titre']; ?></a></div>
@@ -8,8 +7,6 @@ foreach ($newsArray as $news) { ?>
                 <div class="clear"></div><br />
             </div><br />
 <?php }
-
-   $url='index.php';
         //affichage de la pagination : numéros de pages en bas de la fenètre
         paginationListPages($nbPages, $page, $url);
-printFooter(false);
+printFooter();

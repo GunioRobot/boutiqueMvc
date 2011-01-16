@@ -12,4 +12,4 @@
     }?>
                 <br /><br />
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>

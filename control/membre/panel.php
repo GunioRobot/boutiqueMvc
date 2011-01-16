@@ -1,7 +1,8 @@
 <?php include("functions.php"); checkLogin();
 //si l'utilisateur n'est pas connecté, il n'a pas le droit d'accès à l'interface membre
     if(!$_SESSION['login']){
-        $js = false; $admin= false; $page = 'membre-panel'; $titreErreur = 'espace membre - erreur';
+        $js = false; $redirect[0] = 'membre.php?op=login'; $redirect[1] = '2';
+        $page = 'membre-panel'; $titreErreur = 'espace membre - erreur';
         $erreur = 'Vous n\'êtes pas connecté, impossible d\'accéder à l\'espace membre !';
         include_once('vue/erreur.php'); die;
     }

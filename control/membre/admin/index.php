@@ -20,7 +20,9 @@ include_once ('modele/membre/getMembres.php');
         }
         else //erreur dans le choix de la page (0 -1 etc...)
         {
-            $js = false; $admin= false; $page = 'admin'; $titreErreur = 'administration ~ membre - erreur'; $erreur = 'Aucun membre ne se trouve sur cette page!';
+            $js = false; $redirect[0] = 'membre.php?admin=index'; $redirect[1] = '1';
+            $page = 'admin'; $titreErreur = 'administration ~ membre - erreur';
+            $erreur = 'Aucun membre ne se trouve sur cette page!';
             include_once('vue/erreur.php');
         }
 

@@ -4,4 +4,4 @@
                 <div style="text-align:center;">Produit correctement supprimé<br /><br />
                     <a href="boutique.php?admin=index">[ Retourner à la gestion des produits ]</a></div>
             </div>
-<?php printFooter(false); ?>
+<?php printFooter(); ?>
