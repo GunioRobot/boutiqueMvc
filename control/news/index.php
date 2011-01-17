@@ -1,5 +1,7 @@
 <?php include("functions.php"); checkLogin();
 include_once ('modele/news/getNews.php'); include_once ('modele/news/getNombreNews.php');
+include_once ('modele/news/getComments.php');
+
 // postHeader : affichage du header du site : doctype + structure + balises
 $url='index.php';
 // on définit le nombre de news par page
@@ -18,6 +20,7 @@ $url='index.php';
     if(isset($page) AND $page <= $nbPages AND $page > 0)
     {
         $newsArray = getNews((($page-1)*$newsParPage), $newsParPage, 'dateOrder DESC');
+        foreach($newsArray as $n){$nbCommentNews[$n['ID']] = nbComments($n['ID']); }
         include_once('vue/news/index.php');
     }
     else //erreur dans le choix de la page (0 -1 etc...)

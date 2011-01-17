@@ -70,6 +70,7 @@ body {
     width:26.5%;
     float:left;
 }
+.element{margin: 8px; border: 1px dashed rgb(191, 201, 215); padding: 4px;}
 .table-fiche-right{
     margin-right:2px; margin-top:2px;
     border:1px dashed #bfc9d7;
