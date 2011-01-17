@@ -289,6 +289,7 @@ global $titreWebSite, $sloganWebSite;
   <title><?php echo $titreWebSite.' - '.$sloganWebSite.' || '.$titre; ?></title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
   <?php if($redirect){ ?><meta http-equiv="refresh" content="<?php echo $redirect[1]; ?>; url=<?php echo $redirect[0]; ?>" /><?php } ?>
   <?php if($js){?><script type="text/javascript" src="script.js"></script><?php }?>
 </head>

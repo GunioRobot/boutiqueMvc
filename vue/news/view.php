@@ -55,6 +55,14 @@ foreach ($newsArray as $news) {
 
 
                 </form>
+<script type="text/javascript">
+        CKEDITOR.replace( 'message',
+    {
+        toolbar : 'Basic',
+        uiColor : '#9AB8F3'
+    });
+</script>
+
 
 <?php }
 
