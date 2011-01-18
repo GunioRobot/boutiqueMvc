@@ -17,7 +17,7 @@ foreach ($newsArray as $news) {
             <br /><div class="element" style="text-align:center;">Aucun commentaire. Soyez le premier à réagir !</div><br />
 <?php } else{ foreach($commentsArray as $comment){ ?>
             <div class="element" id="comment<?php echo $comment['ID']; ?>">
-                <?php echo htmlspecialchars($comment['message']); ?>
+                <?php echo nl2br(htmlspecialchars($comment['message'])); ?>
                 <br /><br />
                 <div style="text-align:right;">Écrit par <?php echo htmlspecialchars($comment['pseudo']); ?> le <?php echo ($comment['dateFormated']); ?></div>
             </div>
@@ -57,11 +57,15 @@ foreach ($newsArray as $news) {
 
                 </form>
 <script type="text/javascript">
-        CKEDITOR.replace( 'message',
-    {
-        uiColor : '#9AB8F3'
-    });
-</script>
+		//<![CDATA[
+			var sBasePath = document.location.pathname.substring(0,document.location.pathname.lastIndexOf('plugins')) ;
+			// Replace the <textarea id="editor1"> with an CKEditor instance.
+			var CKeditor = CKEDITOR.replace( 'message', {
+											customConfig : sBasePath + 'plugins/bbcode/_sample/bbcode.config.js'
+									}  );
+
+		//]]>
+		</script>
 
 
 <?php }
