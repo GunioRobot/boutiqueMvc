@@ -12,7 +12,7 @@ CKEDITOR.editorConfig = function( config )
 
     config.toolbar_Simple =
     [
-        ['Font','FontSize'],
+        ['Source','Font','FontSize'],
         ['Bold','Italic','Strike'],
         ['TextColor','BGColor'],
         ['NumberedList','BulletedList','-','Blockquote'],
