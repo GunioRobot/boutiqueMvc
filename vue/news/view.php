@@ -38,8 +38,8 @@ foreach ($newsArray as $news) {
                                 <td><label id="mailLabel" for="mail">E-Mail : </label></td>
                                 <td><input type="text" name="mail" id="mail" size="80" onblur="verifRegex(this, rgxMail)" /></td>
                             </tr><?php } ?>
-                            <tr>
-                                <td colspan="2" style="text-align:center;"><textarea id="message" name="message" cols="100" rows="5" onblur="verifTextAreaDefaut(this, defautContact)" onfocus="clearTextArea(this, defautContact)">Écrivez votre message...</textarea></td>
+                            <tr style="width:620px;">
+                                <td colspan="2" style="text-align:center; width:620px;"><textarea id="message" name="message" cols="175" rows="5" onblur="verifTextAreaDefaut(this, defautContact)" onfocus="clearTextArea(this, defautContact)">Écrivez votre message...</textarea></td>
                             </tr>
                             <?php if(!$_SESSION['login']){?><tr>
                                 <td>Code de vérification :</td>
@@ -59,7 +59,6 @@ foreach ($newsArray as $news) {
 <script type="text/javascript">
         CKEDITOR.replace( 'message',
     {
-        toolbar : 'Basic',
         uiColor : '#9AB8F3'
     });
 </script>
