@@ -23,6 +23,7 @@ foreach ($newsArray as $news) {
             </div>
 
 <?php }} ?><br />
+<?php paginationListPages($nbPages, $page, $url); ?>
                 <form action="news.php?op=envoi-comment" method="post" enctype="multipart/form-data" id="add-comment" <?php /*onsubmit="return verifFormMembreLogin(this)" */?>>
                     <fieldset style="text-align:left; width:80%; margin:auto;">
                         <legend>Ajouter un commentaire</legend><br />
