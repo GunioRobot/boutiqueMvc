@@ -165,7 +165,7 @@
 			),
 			'color' => Array(
 				'mode' => BBCODE_MODE_ENHANCED,
-				'allow' => Array('_default' => '/^#?[a-zA-Z0-9._ -]+$/'),
+				'allow' => Array('_default' => '/^#?[a-zA-Z,()0-9._ -]+$/'),
 				'template' => '<span style="color:{$_default/tw}">{$_content/v}</span>',
 				'class' => 'inline',
 				'allow_in' => Array('listitem', 'block', 'columns', 'inline', 'link'),

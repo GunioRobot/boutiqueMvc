@@ -17,7 +17,8 @@ foreach ($newsArray as $news) {
             <br /><div class="element" style="text-align:center;">Aucun commentaire. Soyez le premier à réagir !</div><br />
 <?php } else{ foreach($commentsArray as $comment){ ?>
             <div class="element" id="comment<?php echo $comment['ID']; ?>">
-                <?php echo nl2br(htmlspecialchars($comment['message'])); ?>
+                <?php echo nl2br(htmlspecialchars($comment['message']));
+                require_once("includes/nbbc/nbbc.php"); $bbcode = new BBCode; print $bbcode->Parse(($comment['message'])); ?>
                 <br /><br />
                 <div style="text-align:right;">Écrit par <?php echo htmlspecialchars($comment['pseudo']); ?> le <?php echo ($comment['dateFormated']); ?></div>
             </div>
