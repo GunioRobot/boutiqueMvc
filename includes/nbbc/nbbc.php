@@ -463,12 +463,12 @@ var $default_tag_rules = Array(
 'plain_end' => "</i>",
 ),
 'u' => Array(
-'simple_start' => "<u>",
-'simple_end' => "</u>",
+'simple_start' => "<span style=\"text-decoration: underline;\">",
+'simple_end' => "</span>",
 'class' => 'inline',
 'allow_in' => Array('listitem', 'block', 'columns', 'inline', 'link'),
-'plain_start' => "<u>",
-'plain_end' => "</u>",
+'plain_start' => "<span style=\"text-decoration: underline;\">",
+'plain_end' => "</span>",
 ),
 's' => Array(
 'simple_start' => "<strike>",
@@ -487,7 +487,7 @@ var $default_tag_rules = Array(
 ),
 'color' => Array(
 'mode' => BBCODE_MODE_ENHANCED,
-'allow' => Array('_default' => '/^#?[a-zA-Z0-9._ -]+$/'),
+'allow' => Array('_default' => '/^#?[a-zA-Z(),0-9._ -]+$/'),
 'template' => '<span style="color:{$_default/tw}">{$_content/v}</span>',
 'class' => 'inline',
 'allow_in' => Array('listitem', 'block', 'columns', 'inline', 'link'),
