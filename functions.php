@@ -9,7 +9,7 @@ $titreWebSite = 'Shoten\'Legend';
 $sloganWebSite = 'Vous n\'allez plus pouvoir dormir!';
 $rgxNom = array("#^[a-zA-Z_é' èàêëâç-]{2,45}$#", '2', '45');
 $rgxPseudo = array("#^[a-z0-9A-Z_'\^@.`\-]{3,45}$#", '3', '45');
-$rgxTitre = array("#^[a-zA-Z_'\-.`0-9_é èâ\"àê!:;,/.?)(ëç@&]{1,100}$#", '1', '100');
+$rgxTitre = array("#^[a-zA-Z_'\-.`0-9_é èâ\"ïîëäôö^àê!:;,/.?)(ëç@&]{1,100}$#", '1', '100');
 $rgxAdresse = array("#^[a-zA-Z_é' èà0-9ê,ëâç-]{10,100}$#", '10', '100');
 $rgxPassword = array('#^.{4,45}$#', '4', '45');
 $rgxPostal = array('#^[0-9]{5}$#', '5', '5');
@@ -204,7 +204,7 @@ switch ($haveToBeLogin) {
     case true:
 //si l'utilisateur n'est pas connecté, il n'a pas le droit d'accès à l'interface membre
 if(!$_SESSION['login']){
-    postHeader('membre-panel', false, 'Boutique - Erreur - Espace Membre', false);
+    printHeader('membre-panel', false, 'Boutique - Erreur - Espace Membre', false);
     echo '<script language="javascript">alert("Vous n\'êtes pas connecté! \nImpossible d\'accéder à l\'interfaçe membre")</script>';
     echo '<script language="javascript">window.location = "membre.php?op=login"</script>';
     //dans le cas où l'utilisateur a désactivé le javascript, on affiche un message simple qui ne fait pas de redirection automatique ?>
