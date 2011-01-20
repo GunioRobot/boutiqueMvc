@@ -6,7 +6,7 @@
                 </div><br />
                 <?php foreach($newsArray as $news){ ?>
                 <form action="news.php?admin=envoiUpdate" method="post" enctype="multipart/form-data" onsubmit="return verifFormNews(this, 1)" >
-                    <fieldset style="text-align:left; width:80%; margin:auto;">
+                    <fieldset style="text-align:left; width:95%; margin:auto;">
                         <legend>Modifier une news</legend>
                         <table style="margin:auto;">
                             <tr>
@@ -18,7 +18,7 @@
                                 <td><input type="text" name="auteur" id="auteur" size="75" value="<?php echo htmlspecialchars($news["auteur"])?>" onblur="verifRegex(this, rgxPseudo)"/></td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="text-align:center;"><textarea id="texte" name="texte" cols="85" rows="5" ><?php echo htmlspecialchars($news["texte"])?></textarea></td>
+                                <td colspan="2" style="text-align:center;"><textarea id="texte" name="texte" cols="180" rows="5" onfocus="clearTextArea(this, defautNews)"><?php echo htmlspecialchars($news["texte"])?></textarea></td>
                             </tr>
                             <tr style="display:none;">
                                 <td><label for="id" style="display:none;" >ID news (do not change) :</label></td>
@@ -39,6 +39,13 @@
                                 </td>
                             </tr>
                         </table>
+                        <script type="text/javascript">
+                                CKEDITOR.replace( 'texte',
+    {
+        toolbar : 'News'
+    });
+
+                        </script>
                     </fieldset>
                 </form><br />
                 <?php } ?>

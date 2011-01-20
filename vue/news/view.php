@@ -12,7 +12,7 @@ foreach ($newsArray as $news) {
                 <div id="auteur-<?php echo $id; ?>" style="float:right;">Posté par <?php echo $news['auteur']; ?> le <?php echo $news['date']; ?></div>
                 <div class="clear"></div><br />
             </div>
-            <strong>Commentaires :</strong>
+            <strong id="comment">Commentaires :</strong>
 <?php if($nbComments == 0){ ?>
             <br /><div class="element" style="text-align:center;">Aucun commentaire. Soyez le premier à réagir !</div><br />
 <?php } else{ foreach($commentsArray as $comment){ ?>
