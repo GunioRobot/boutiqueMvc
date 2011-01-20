@@ -10,3 +10,12 @@ function ajoutComment($id_news, $pseudo, $message, $mail){
     $req->closeCursor();
     return '';
 }
+
+function deleteComment($id_comment){
+    global $bdd;
+
+    $req= $bdd->prepare("DELETE FROM news_comments WHERE ID = ?");
+    $req->execute(array($id_comment)) or die (print_r($req->errorInfo()));
+    $req->closeCursor();
+    return '';
+}
