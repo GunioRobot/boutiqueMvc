@@ -25,10 +25,10 @@
                         <td class="table-fiche"><strong class="table-fiche-strong">Acheté :</strong>  <?php echo htmlspecialchars($produit['achat']); ?> fois </td>
                     </tr>
                     <tr>
-                        <td class="table-fiche"><strong class="table-fiche-strong">Informations Supplémentaires :</strong><br />  <?php echo nl2br(htmlspecialchars($produit['infos'])); ?></td>
+                        <td class="table-fiche"><strong class="table-fiche-strong">Informations Supplémentaires :</strong><br />  <?php echo $produit['infos']; ?></td>
                     </tr>
                     <?php
-                    if ($produit['image'] != 'http://' AND $produit['website'] != ''){ ?>
+                    if ($produit['image'] != 'http://' AND $produit['image'] != ''){ ?>
                     <tr>
                         <td class="table-fiche" style="text-align:center;"><img src="<?php echo htmlspecialchars($produit['image']); ?>" alt="" /> </td>
                     </tr>

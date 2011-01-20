@@ -5,7 +5,7 @@
                     <a href="boutique.php?admin=index">[ Geston des produits ]</a> | <a href="boutique.php?admin=produit-add" class="active">[ Ajouter un produit ]</a> | <a href="boutique.php?admin=achat">[ Gestion des achats ]</a> | <a href="boutique.php?admin=categorie">[ Gestion des catégories ]</a>
                 </div><br />
                 <form action="boutique.php?admin=produit-envoi" method="post" enctype="multipart/form-data"  onsubmit="return verifFormAddProduit(this)">
-                    <fieldset style="text-align:left; width:80%; margin:auto;">
+                    <fieldset style="text-align:left; width:95%; margin:auto;">
                         <legend>Ajouter un produit</legend>
                         <table style="margin:auto;">
                             <tr>
@@ -47,6 +47,13 @@
                                 </td>
                             </tr>
                         </table>
+                        <script type="text/javascript">
+                                CKEDITOR.replace( 'infos',
+    {
+        toolbar : 'News'
+    });
+
+                        </script>
                     </fieldset>
                 </form>
             </div>

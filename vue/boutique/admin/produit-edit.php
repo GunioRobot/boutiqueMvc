@@ -1,8 +1,11 @@
 <?php foreach($produitArray as $produit){printHeader('admin', false, 'administration : éditer un produit', true);  ?>
             <div id="admin-add-product" class="block-middle">
                 <div class="head-block">éditer le produit n°<?php echo htmlspecialchars($_GET['id']);?></div><br />
+                <div style="text-align:center;">
+                    <a href="boutique.php?admin=index" class="active">[ Geston des produits ]</a> | <a href="boutique.php?admin=produit-add">[ Ajouter un produit ]</a> | <a href="boutique.php?admin=achat">[ Gestion des achats ]</a> | <a href="boutique.php?admin=categorie">[ Gestion des catégories ]</a>
+                </div><br />
                 <form action="boutique.php?admin=produit-envoi" method="post" enctype="multipart/form-data"  onsubmit="return verifFormAddProduit(this)">
-                    <fieldset style="text-align:left; width:80%; margin:auto;">
+                    <fieldset style="text-align:left; width:95%; margin:auto;">
                         <legend>Ajouter un produit</legend>
                         <table style="margin:auto;">
                             <tr>
@@ -15,11 +18,11 @@
                             </tr>
                             <tr>
                                 <td><label id="imageLabel" for="image">Image (url) :</label></td>
-                                <td><input type="text" name="image" id="image" size="75" value="http://" value="<?php echo htmlspecialchars($produit["image"])?>"/></td>
+                                <td><input type="text" name="image" id="image" size="75" value="<?php echo htmlspecialchars($produit["image"])?>"/></td>
                             </tr>
                             <tr>
                                 <td><label for="website">Site internet :</label></td>
-                                <td><input type="text" name="website" id="website" size="75" value="http://" value="<?php echo htmlspecialchars($produit["website"])?>"/></td>
+                                <td><input type="text" name="website" id="website" size="75" value="<?php echo htmlspecialchars($produit["website"])?>"/></td>
                             </tr>
                             <tr>
                                 <td colspan="2" style="text-align:center;"><textarea id="infos" name="infos" cols="95" rows="5" onblur="verifDescription(this)" onfocus="clearTextArea(this, defautProduit)"><?php echo htmlspecialchars($produit["infos"])?></textarea></td>
@@ -49,6 +52,13 @@
                                 </td>
                             </tr>
                         </table>
+                        <script type="text/javascript">
+                                CKEDITOR.replace( 'infos',
+    {
+        toolbar : 'News'
+    });
+
+                        </script>
                     </fieldset>
                 </form>
             </div>
