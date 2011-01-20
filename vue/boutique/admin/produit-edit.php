@@ -55,7 +55,12 @@
                         <script type="text/javascript">
                                 CKEDITOR.replace( 'infos',
     {
-        toolbar : 'News'
+        toolbar : 'News',
+
+        coreStyles_underline	: { element : 'span', attributes : {'class': 'Underline'}},
+        coreStyles_strike	: { element : 'span', attributes : {'class': 'StrikeThrough'}, overrides : 'strike' },
+        coreStyles_subscript : { element : 'span', attributes : {'class': 'Subscript'}, overrides : 'sub' },
+        coreStyles_superscript : { element : 'span', attributes : {'class': 'Superscript'}, overrides : 'sup' }
     });
 
                         </script>

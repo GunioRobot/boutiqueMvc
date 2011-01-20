@@ -37,3 +37,45 @@ img, input, textarea
 {
 	cursor: default;
 }
+.Underline
+{
+	text-decoration: underline;
+}
+
+.StrikeThrough
+{
+	text-decoration: line-through;
+}
+
+.Subscript
+{
+	vertical-align: sub;
+	font-size: smaller;
+}
+
+.Superscript
+{
+	vertical-align: super;
+	font-size: smaller;
+}
+
+code
+{
+	font-family: courier, monospace;
+	background-color: #eeeeee;
+	padding-left: 1px;
+	padding-right: 1px;
+	border: #c0c0c0 1px solid;
+}
+
+kbd
+{
+	padding: 0px 1px 0px 1px;
+	border-width: 1px 2px 2px 1px;
+	border-style: solid;
+}
+
+blockquote
+{
+	color: #808080;
+}
