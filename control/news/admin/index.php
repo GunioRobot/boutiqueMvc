@@ -15,7 +15,7 @@ include_once ('modele/news/getNews.php'); include_once ('modele/news/getNombreNe
         //on vérifie maintenant que le numero de page existe bien
         if(isset($page) AND $page <= $nbPages AND $page > 0)
         {
-            $newsArray = getNews((($page-1)*$newsParPage), $newsParPage, 'ID ASC');
+            $newsArray = getNews((($page-1)*$newsParPage), $newsParPage, 'ID DESC');
             include_once('vue/news/admin/index.php');
         }
         else //erreur dans le choix de la page (0 -1 etc...)
