@@ -1,4 +1,5 @@
-<?php printHeader('accueil', false, 'news : envoi d\'un commentaire', true); ?>
+<?php if($envoi){$redirect[0]= 'news.php?id='.$_POST['ID_news']; $redirect[1]='2'; } else {$redirect = false;}
+printHeader('accueil', $redirect, 'news : envoi d\'un commentaire', true); ?>
             <div id="envoi" class="block-middle">
                 <div class="head-block">envoi d'un commentaire</div><br />
 <?php

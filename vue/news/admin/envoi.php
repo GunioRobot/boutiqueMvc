@@ -1,4 +1,4 @@
-<?php printHeader('admin', false, 'administration : envoi d\'une news', true); ?>
+<?php $redirect[0]= 'news.php?admin=index'; $redirect[1]='2'; printHeader('admin', $redirect, 'administration : envoi d\'une news', true); ?>
             <div id="admin-envoi" class="block-middle">
                 <div class="head-block">envoi de la news : <?php echo $_POST['titre']; ?></div><br />
 <?php
