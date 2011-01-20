@@ -8,7 +8,7 @@ foreach ($newsArray as $news) {
 <?php } ?>
             <div id="news-<?php echo $news['ID']; ?>" class="block-middle">
                 <div class="head-block"><?php echo $news['titre']; ?></div>
-                <div style="padding-left:5px;"><?php echo nl2br($news['texte']); ?></div><br />
+                <div style="padding-left:5px;"><?php echo $news['texte']; ?></div><br />
                 <div id="auteur-<?php echo $id; ?>" style="float:right;">Posté par <?php echo $news['auteur']; ?> le <?php echo $news['date']; ?></div>
                 <div class="clear"></div><br />
             </div>
