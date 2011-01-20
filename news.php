@@ -8,6 +8,10 @@ if(isset($_GET['op']) AND $_GET['op'] == 'envoi-comment')
 {
     include_once('control/news/envoi-comment.php');
 }
+if(isset($_GET['op']) AND $_GET['op'] == 'delete-comment' AND (isset($id)) AND $id > 0)
+{
+    include_once('control/news/delete-comment.php');
+}
 elseif (isset($_GET['admin']) AND $_GET['admin'] == 'index')
 {
     include_once('control/news/admin/index.php');
