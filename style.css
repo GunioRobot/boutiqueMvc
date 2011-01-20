@@ -78,6 +78,9 @@ body {
     width:70%;
     float:right;
 }
+p{
+    margin-top:2px;
+}
 .table-fiche{
     margin:2px 2px 0px 2px;
     border:1px dashed #666666;
