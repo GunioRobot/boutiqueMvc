@@ -30,17 +30,20 @@ foreach ($newsArray as $news) {
                         <legend>Ajouter un commentaire</legend><br />
                         <table style="margin:auto;">
                             <tr>
-                                <td><label id="pseudoLabel" <?php if(!$_SESSION['login']){?>for="pseudo"<?php } ?>>Pseudo : </label></td>
-                                <td><?php if($_SESSION['login']){?><div style="text-align:center;"><strong><?php echo $_SESSION['pseudo']; ?></strong> <a href="membre.php?op=logout">[ Déconnexion ]</a></div><?php } else{ ?>
-                                    <input type="text" name="pseudo" id="pseudo" size="80" onblur="verifRegex(this, rgxPseudo)" /><?php } ?>
-                                </td>
+                                <?php if($_SESSION['login']){?><td colspan="2">
+                                    <div style="text-align:center;">Pseudo : <strong><?php echo $_SESSION['pseudo']; ?></strong> <a href="membre.php?op=logout">[ Déconnexion ]</a></div>
+                                </td><?php } else{ ?>
+                                <td><label id="pseudoLabel" for="pseudo">Pseudo : </label></td>
+                                <td>
+                                    <input type="text" name="pseudo" id="pseudo" size="80" onblur="verifRegex(this, rgxPseudo)" />
+                                </td><?php } ?>
                             </tr>
                             <?php if(!$_SESSION['login']){?><tr>
                                 <td><label id="mailLabel" for="mail">E-Mail : </label></td>
                                 <td><input type="text" name="mail" id="mail" size="80" onblur="verifRegex(this, rgxMail)" /></td>
                             </tr><?php } ?>
-                            <tr style="width:620px;">
-                                <td colspan="2" style="text-align:center; width:620px;"><textarea id="message" name="message" cols="175" rows="5" onblur="verifTextAreaDefaut(this, defautContact)" onfocus="clearTextArea(this, defautContact)">Écrivez votre message...</textarea></td>
+                            <tr style="width:640px;">
+                                <td colspan="2" style="text-align:center; width:620px;"><textarea id="message" name="message" cols="95" rows="5" onblur="verifTextAreaDefaut(this, defautContact)" onfocus="clearTextArea(this, defautContact)">Écrivez votre message...</textarea></td>
                             </tr>
                             <?php if(!$_SESSION['login']){?><tr>
                                 <td>Code de vérification :</td>
