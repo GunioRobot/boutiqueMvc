@@ -9,6 +9,7 @@ CKEDITOR.editorConfig = function( config )
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
             config.toolbar = 'Simple';
+            
 
     config.toolbar_Simple =
     [
@@ -28,6 +29,23 @@ CKEDITOR.editorConfig = function( config )
         
         
     ];
+
+    CKEDITOR.config.toolbar_News =
+[
+	['Source', 'NewPage','Preview','Templates'],
+	['Cut','Copy','Paste','PasteText','PasteFromWord','-','SpellChecker', 'Scayt'],
+	['Undo','Redo','-','Find','Replace','RemoveFormat'], ['Maximize', 'ShowBlocks'],
+	'/',
+	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+	['Link','Unlink','Anchor'],
+	['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],
+	'/',
+	['Styles','Font','FontSize'],
+	['TextColor','BGColor'],
+	
+];
 	
 
 
