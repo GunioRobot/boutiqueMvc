@@ -14,7 +14,7 @@ if(!isset($pseudo)){
 
 $admin = areYouAdmin();
 
-if(!$admin AND $id_user != $_SESSION['ID']){
+if(!$admin AND (!$_SESSION['login'] OR $id_user != $_SESSION['ID'])){
     $js = false; $redirect[0] = 'javascript:history.go(-1)'; $redirect[1] = '1';
     $page = 'accueil'; $titreErreur = 'news - erreur'; $erreur = 'Vous n\'êtes pas autorisé à supprimer un commentaire qui ne vous appartient pas!';
     include_once('vue/erreur.php'); die;
