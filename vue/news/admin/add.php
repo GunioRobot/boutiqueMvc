@@ -28,7 +28,7 @@
                                 CKEDITOR.replace( 'texte',
     {
         toolbar : 'News',
-
+        contentsCss : 'ckeditor/contents.css',
         coreStyles_underline	: { element : 'span', attributes : {'class': 'Underline'}},
         coreStyles_strike	: { element : 'span', attributes : {'class': 'StrikeThrough'}, overrides : 'strike' },
         coreStyles_subscript : { element : 'span', attributes : {'class': 'Subscript'}, overrides : 'sub' },
