@@ -48,16 +48,26 @@
                             </tr>
                         </table>
                         <script type="text/javascript">
-                                CKEDITOR.replace( 'infos',
+                                var editor = CKEDITOR.replace( 'texte',
     {
         toolbar : 'News',
         contentsCss : 'ckeditor/contents.css',
         coreStyles_underline	: { element : 'span', attributes : {'class': 'Underline'}},
         coreStyles_strike	: { element : 'span', attributes : {'class': 'StrikeThrough'}, overrides : 'strike' },
         coreStyles_subscript : { element : 'span', attributes : {'class': 'Subscript'}, overrides : 'sub' },
-        coreStyles_superscript : { element : 'span', attributes : {'class': 'Superscript'}, overrides : 'sup' }
-    });
+        coreStyles_superscript : { element : 'span', attributes : {'class': 'Superscript'}, overrides : 'sup' },
 
+        filebrowserBrowseUrl : '/boutiqueMvc/ckfinder/ckfinder.html',
+ 	filebrowserImageBrowseUrl : '/boutiqueMvc/ckfinder/ckfinder.html?type=Images',
+ 	filebrowserFlashBrowseUrl : '/boutiqueMvc/ckfinder/ckfinder.html?type=Flash',
+ 	filebrowserUploadUrl : '/boutiqueMvc/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+ 	filebrowserImageUploadUrl : '/boutiqueMvc/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+ 	filebrowserFlashUploadUrl : '/boutiqueMvc/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+ 	filebrowserWindowWidth : '1000',
+ 	filebrowserWindowHeight : '700'
+
+    });
+     CKFinder.setupCKEditor( editor, '/boutiqueMvc/ckfinder/' );
                         </script>
                     </fieldset>
                 </form>
