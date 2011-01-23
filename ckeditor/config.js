@@ -11,12 +11,12 @@ CKEDITOR.editorConfig = function( config )
     config.toolbar = 'Simple';
     
     //ajout KCFinder
-   config.filebrowserBrowseUrl = '../kcfinder/browse.php?type=files';
-   config.filebrowserImageBrowseUrl = '../kcfinder/browse.php?type=images';
-   config.filebrowserFlashBrowseUrl = '../kcfinder/browse.php?type=flash';
-   config.filebrowserUploadUrl = '../kcfinder/upload.php?type=files';
-   config.filebrowserImageUploadUrl = '../kcfinder/upload.php?type=images';
-   config.filebrowserFlashUploadUrl = '../kcfinder/upload.php?type=flash';
+   config.filebrowserBrowseUrl = '/boutiqueMvc/kcfinder/browse.php?type=files';
+   config.filebrowserImageBrowseUrl = '/boutiqueMvc/kcfinder/browse.php?type=images';
+   config.filebrowserFlashBrowseUrl = '/boutiqueMvc/kcfinder/browse.php?type=flash';
+   config.filebrowserUploadUrl = '/boutiqueMvc/kcfinder/upload.php?type=files';
+   config.filebrowserImageUploadUrl = '/boutiqueMvc/kcfinder/upload.php?type=images';
+   config.filebrowserFlashUploadUrl = '/boutiqueMvc/kcfinder/upload.php?type=flash';
 
             
 
