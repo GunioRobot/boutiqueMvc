@@ -30,7 +30,8 @@ function CheckAuthentication()
 	// user logs in your system. To be able to use session variables don't
 	// forget to add session_start() at the top of this file.
 
-	return false;
+	//return $_SESSION['login'];
+    return true;
 }
 
 // LicenseKey : Paste your license key here. If left blank, CKFinder will be
@@ -60,7 +61,7 @@ Examples:
 
 ATTENTION: The trailing slash is required.
 */
-$baseUrl = '/ckfinder/userfiles/';
+$baseUrl = '/boutiqueMvc/upload/public/';
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the
@@ -192,7 +193,7 @@ $config['ResourceType'][] = Array(
 		'directory' => $baseDir . 'files',
 		'maxSize' => 0,
 		'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
-		'deniedExtensions' => '');
+		'deniedExtensions' => 'php,js');
 
 $config['ResourceType'][] = Array(
 		'name' => 'Images',
@@ -200,7 +201,7 @@ $config['ResourceType'][] = Array(
 		'directory' => $baseDir . 'images',
 		'maxSize' => "16M",
 		'allowedExtensions' => 'bmp,gif,jpeg,jpg,png,avi,iso,mp3',
-		'deniedExtensions' => '');
+		'deniedExtensions' => 'php,js');
 
 $config['ResourceType'][] = Array(
 		'name' => 'Flash',
@@ -208,7 +209,7 @@ $config['ResourceType'][] = Array(
 		'directory' => $baseDir . 'flash',
 		'maxSize' => 0,
 		'allowedExtensions' => 'swf,flv',
-		'deniedExtensions' => '');
+		'deniedExtensions' => 'php,js');
 
 /*
  Due to security issues with Apache modules, it is recommended to leave the
