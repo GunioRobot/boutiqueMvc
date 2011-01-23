@@ -1,7 +1,7 @@
 <?php printHeader('admin', false, 'administration ~ message', false);
 foreach ($messageArray as $message) { ?>
             <div id="admin-message-view" class="block-middle">
-                <div class="head-block">Message n°'<?php echo htmlspecialchars($_GET['id']) ?></div><br />
+                <div class="head-block">Message n°<?php echo htmlspecialchars($_GET['id']) ?></div><br />
                 <table width="100%">
                     <tr>
                         <td class="table-fiche"><strong class="table-fiche-strong">Nom/Prénom :</strong> <?php echo htmlspecialchars($message['nom']) ?></td>
@@ -15,7 +15,7 @@ foreach ($messageArray as $message) { ?>
                         <td class="table-fiche"><strong class="table-fiche-strong">Site internet :</strong>  <?php echo '<a href="'.htmlspecialchars($message['website']).'">'.htmlspecialchars($message['website']).'</a>' ?></td>
                     </tr> <?php } ?>
                     <tr>
-                        <td class="table-fiche"><strong class="table-fiche-strong">Message :</strong><br />  <?php echo nl2br(htmlspecialchars($message['message'])) ?></td>
+                        <td class="table-fiche" style="max-width:790px;"><strong class="table-fiche-strong">Message :</strong><br />  <?php require_once("includes/nbbc/nbbc.php"); $bbcode = new BBCode; print $bbcode->Parse(($message['message'])); ?></td>
                     </tr>
                     <tr>
                         <td class="table-fiche" style="text-align:center;">

@@ -5,7 +5,7 @@
                     <a href="news.php?admin=index">[ Gestion des news ]</a> | <a href="news.php?admin=add" class="active">[ Ajouter une news ]</a>
                 </div><br />
                 <form action="news.php?admin=envoiNew" method="post" enctype="multipart/form-data" onsubmit="return verifFormNews(this, 0)">
-                    <fieldset style="text-align:left; width:80%; margin:auto;">
+                    <fieldset style="text-align:left; width:95%; margin:auto;">
                         <legend>Ajouter une news</legend>
                         <table style="margin:auto;">
                             <tr>
@@ -13,7 +13,7 @@
                                 <td><input type="text" name="titre" id="titre" size="74" onblur="verifRegex(this, rgxTitre)"/></td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="text-align:center;"><textarea id="texte" name="texte" cols="80" rows="5" onfocus="clearTextArea(this, defautNews)">Texte de l'actualité</textarea></td>
+                                <td colspan="2" style="text-align:center;"><textarea id="texte" name="texte" cols="180" rows="5" onfocus="clearTextArea(this, defautNews)">Texte de l'actualité</textarea></td>
                             </tr>
                             <tr>
                                 <td colspan="2" style="text-align:center;">
@@ -24,6 +24,18 @@
                                 </td>
                             </tr>
                         </table>
+                        <script type="text/javascript">
+                                CKEDITOR.replace( 'texte',
+    {
+        toolbar : 'News',
+        contentsCss : 'ckeditor/contents.css',
+        coreStyles_underline	: { element : 'span', attributes : {'class': 'Underline'}},
+        coreStyles_strike	: { element : 'span', attributes : {'class': 'StrikeThrough'}, overrides : 'strike' },
+        coreStyles_subscript : { element : 'span', attributes : {'class': 'Subscript'}, overrides : 'sub' },
+        coreStyles_superscript : { element : 'span', attributes : {'class': 'Superscript'}, overrides : 'sup' }
+    });
+
+                        </script>
                     </fieldset>
                 </form><br />
             </div>

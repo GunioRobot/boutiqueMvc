@@ -113,7 +113,7 @@ function verifFormContact(f)
 {
    var nomOk = verifRegex(f.nom, rgxNom);
    var mailOk = verifRegex(f.mail, rgxMail);
-   var messageOk = verifTextAreaDefaut(f.message, defautContact);
+   /*var messageOk = verifTextAreaDefaut(f.message, defautContact);*/
 
    if(nomOk && mailOk && messageOk)
       return true;
@@ -122,7 +122,7 @@ function verifFormContact(f)
       alert("Veuillez remplir correctement tous les champs");
       affichageErreur(mailOk, "footerErreurMail");
       affichageErreur(nomOk, "footerErreurNom");
-      affichageErreur(messageOk, "footerErreurMessage");
+      /*affichageErreur(messageOk, "footerErreurMessage");*/
       return false;
    }
 }
@@ -202,7 +202,7 @@ function verifFormAddProduit(f)
 {
    var titreOk = verifRegex(f.titre, rgxTitre);
    var auteurOk = verifRegex(f.auteur, rgxTitre);
-   var descriptionOk = verifTextAreaDefaut(f.infos, defautProduit);
+   //var descriptionOk = verifTextAreaDefaut(f.infos, defautProduit);
    var prixOk = verifRegex(f.prix, rgxPrix);
 
    if(titreOk && auteurOk && descriptionOk && prixOk)
@@ -212,7 +212,7 @@ function verifFormAddProduit(f)
       alert("Veuillez remplir correctement tous les champs");
       affichageErreur(titreOk, "footerErreurNom");
       affichageErreur(auteurOk, "footerErreurAuteur");
-      affichageErreur(descriptionOk, "footerErreurDescription");
+      //affichageErreur(descriptionOk, "footerErreurDescription");
       affichageErreur(prixOk, "footerErreurPrix");
       return false;
    }

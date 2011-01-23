@@ -444,6 +444,7 @@ CKEDITOR.config.toolbar_Full =
 	['Maximize', 'ShowBlocks','-','About']
 ];
 
+
 /**
  * The toolbox (alias toolbar) definition. It is a toolbar name or an array of
  * toolbars (strips), each one being also an array, containing a list of UI items.

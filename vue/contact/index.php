@@ -3,7 +3,7 @@
                 <div class="head-block">contactez-nous</div><br />
 
                 <form action="contact.php?&amp;op=envoi" method="post" enctype="multipart/form-data"  onsubmit="return verifFormContact(this)">
-                    <fieldset style="text-align:left; width:80%; margin:auto;">
+                    <fieldset style="text-align:left; width:90%; margin:auto;">
                         <legend>Formulaire de contact</legend>
                         <table style="margin:auto;">
                             <tr>
@@ -19,7 +19,7 @@
                                 <td><input type="text" name="website" id="website" size="65" value="http://" /></td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="text-align:center;"><textarea id="message" name="message" cols="100" rows="5" onblur="verifTextAreaDefaut(this, defautContact)" onfocus="clearTextArea(this, defautContact)">Écrivez votre message...</textarea></td>
+                                <td colspan="2" style="text-align:center; width:650px;"><textarea id="message" name="message" cols="100" rows="2" onblur="verifTextAreaDefaut(this, defautContact)" onfocus="clearTextArea(this, defautContact)">Écrivez votre message...</textarea></td>
                             </tr>
                             <tr>
                                 <td><label for="note">Sondage~ Notez notre site :</label></td>
@@ -51,7 +51,17 @@
                                     <span id="footerErreurMessage" style="display:none; color:red;" ><br />/!\ Erreur dans votre message /!\</span>
                                 </td>
                             </tr>
-                        </table>                        
+                        </table>
+                        <script type="text/javascript">
+		//<![CDATA[
+			var sBasePath = document.location.pathname.substring(0,document.location.pathname.lastIndexOf('plugins')) ;
+			// Replace the <textarea id="editor1"> with an CKEditor instance.
+			var CKeditor = CKEDITOR.replace( 'message', {
+											customConfig : sBasePath + 'plugins/bbcode/_sample/bbcode.config.js'
+									}  );
+
+		//]]>
+                        </script>
                     </fieldset>
                 </form>
             </div>

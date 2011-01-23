@@ -7,7 +7,11 @@
             <div style="float:left;"><a href="boutique.php?produit=<?php echo htmlspecialchars($produit['ID']); ?>" class="a-img"><img src="<?php echo htmlspecialchars($produit['image']); ?>" style="height:75px; padding-right:5px;" alt="vignette-<?php echo htmlspecialchars($produit['ID']); ?>" /></a></div>
             <strong>
                 <a href="boutique.php?produit=<?php echo htmlspecialchars($produit['ID']); ?>"> <?php echo htmlspecialchars($produit['titre']); ?> </a></strong><br />
-                <?php echo htmlspecialchars(substr($produit['infos'], 0, 450)); ?>...
+                <?php
+                while(preg_match('#(.*)<.*>(.*)#', $produit['infos'])){
+                    $produit['infos'] = preg_replace('#(.*)<.*>(.*)#', '$1$2', $produit['infos']);
+                }
+                echo substr($produit['infos'], 0, 450); if(strlen($produit['infos']>=450)){echo'...';}?>
             <div class="clear_float"></div>
         </div>
         <?php } ?>
