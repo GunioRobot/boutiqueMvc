@@ -18,7 +18,11 @@ foreach ($newsArray as $news) {
 <?php } else{ foreach($commentsArray as $comment){ ?>
             <div class="element" id="comment<?php echo $comment['ID']; ?>">
                 <?php //echo nl2br(htmlspecialchars($comment['message']));
-                require_once("includes/nbbc/nbbc.php"); $bbcode = new BBCode; print $bbcode->Parse(($comment['message'])); ?>
+                require_once("includes/nbbc/nbbc.php"); 
+                $bbcode = new BBCode;
+                $bbcode->SetLocalImgURL("http://127.0.0.1/boutiqueMvc/");
+                $bbcode->SetLocalImgDir(dirname(dirname(dirname(__FILE__))));
+                print $bbcode->Parse(($comment['message'])); ?>
                 <br /><br />
                 <div style="text-align:right;">Écrit par <?php echo htmlspecialchars($comment['pseudo']); ?> le <?php echo ($comment['dateFormated']); if($admin OR ($_SESSION['login'] AND $comment['ID_membre'] == $_SESSION['ID'])){ ?> | <a href="news.php?op=delete-comment&amp;id=<?php echo $comment['ID'];?>" class="a-img"><img src="images/cross.png" alt="[ ✖ supprimer ]" style="vertical-align:middle;" /></a><?php } ?></div>
             </div>
