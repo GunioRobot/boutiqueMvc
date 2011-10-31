@@ -21,7 +21,7 @@
 		forget to allow ampersands, your users will be unable to display &lt; and &gt; characters
 		because the initial &amp; used in HTML to represent them (as in the case of <tt>&amp;lt;</tt>
 		and <tt>&amp;gt;</tt>) will be converted to an <tt>&amp;amp;</tt> in the output.<br /><br />
-		
+
 		<b>Very important note: The tag marker cannot be changed during a parse!</b>
 		This function must not be called by a tag callback function; any changes to the
 		tag marker during a <tt>Parse()</tt> will be ignored until the next time <tt>Parse()</tt>
@@ -58,7 +58,7 @@
 		the user to do HTML things that would otherwise be unsafe; but it's very important
 		when the tag marker is set to '&lt;', because otherwise the user would have no
 		way to display '&lt;' or '&gt;' without them being converted to tags.<br /><br />
-		
+
 		Note also that in tags marked <tt>BBCODE_VERBATIM</tt>, this is temporarily
 		disabled:  The tag wants its data verbatim, so it's getting its data verbatim.<br /><br />
 	</div>
@@ -125,7 +125,7 @@
 		will be retained in the output, so if you want to display them, a quick call to
 		<tt>nl2br()</tt> will do the job.  Alternatively, a few quick calls to <tt>preg_replace()</tt>
 		can turn your plain-jane HTML into simple, readable plain text:
-		
+
 		<div class='code_header'>Code:</div>
 		<xmp class='code'>// Convert the input to plain HTML with line breaks intact.
 $bbcode->SetPlainMode(true);

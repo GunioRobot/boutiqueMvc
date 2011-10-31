@@ -9,9 +9,9 @@
 <?php
 
 	require_once("../nbbc.php");
-	
+
 	$input = "This text is [mono]monospaced![/mono]";
-	
+
 	$bbcode = new BBCode;
 
 	$new_rule = Array(
@@ -20,7 +20,7 @@
 		'class' => 'inline',
 		'allow_in' => Array('listitem', 'block', 'columns', 'inline', 'link'),
 	);
-	$bbcode->AddRule('mono', $new_rule); 
+	$bbcode->AddRule('mono', $new_rule);
 
 	$output = $bbcode->Parse($input);
 

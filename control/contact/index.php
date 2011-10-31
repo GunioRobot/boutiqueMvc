@@ -11,5 +11,5 @@ $publickey = "6LeY-7kSAAAAAP6I1bSIh9elEmQv3XbCTEMOYkVo"; // you got this from th
 // On affiche la page (vue)
 include_once('vue/contact/index.php');
 ?>
-            
+
 

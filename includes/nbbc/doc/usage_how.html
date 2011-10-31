@@ -26,19 +26,19 @@ will be structured like this:</p>
 <xmp class='code'><?php
     ...other includes...
     require_once("nbbc.php");
-	
+
     ...
-	
+
     $bbcode = new BBCode;
     ...possible additional optional setup for the $bbcode object...
-	
+
     ...
-	
+
     $string = [some BBCode from somewhere, usually either a file or a database]
     $output = $bbcode->Parse($string);
-	
+
     ...
-	
+
     print $output;
 ?></xmp>
 

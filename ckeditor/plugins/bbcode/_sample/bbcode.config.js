@@ -26,7 +26,7 @@
 CKEDITOR.config.toolbar_Full = [
 	['Source'],
 	['Undo','Redo'],
-	['Bold','Italic','Underline','-','Link', 'Unlink'], 
+	['Bold','Italic','Underline','-','Link', 'Unlink'],
 	['Blockquote', 'TextColor', 'Image'],
 	['SelectAll', 'RemoveFormat']
 ] ;

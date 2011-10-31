@@ -21,7 +21,7 @@ include_once('modele/membre/panel_updateDatas.php');
         $send[] = verificationFormulaire($_POST['mail'], $rgxMail, 'Erreur dans l\'adresse email', false);
         $send[] = verificationFormulaire($_POST['codepostal'], $rgxPostal, 'Erreur dans le code postal', false);
         $send[] = verificationFormulaire($_POST['ville'], $rgxNom, 'Erreur dans la ville', false);
-        $send[] = verificationFormulaire($_POST['pays'], $rgxNom, 'Erreur dans le pays', false); 
+        $send[] = verificationFormulaire($_POST['pays'], $rgxNom, 'Erreur dans le pays', false);
         $send[] = verificationFormulaire($_POST['ID_membre'], $rgxNombre, 'Erreur dans l\'ID du membre. Veuillez ne pas modifier cette valeur !', false);
         if(isset($_POST['admin']) && $_POST['admin'] == 'on') {$admin = 1;} else {$admin = 0;}
 
@@ -48,7 +48,7 @@ include_once('modele/membre/panel_updateDatas.php');
                 if($_POST['changePassword'] != $_POST['changePassword2']){
                     $send[] = 'Les deux nouveaux mots de passe ne correspondent pas. Les modifications de profil ont été envoyés mais votre mot de passe n\'a pas été modifié !';
                 }
-                
+
                 foreach($send as $element)
                 {
                     if($element != '')

@@ -68,12 +68,12 @@
 		part of a URL; while "&eacute;" might become "<tt>%E9</tt>", and "&eacute;glise" might
 		become "<tt>%E9glise</tt>", depending on your current character encoding.  The
 		output of this function is always URL-safe and 8-bit clean.<br /><br />
-		
+
 		Note that because accented characters like &eacute; and &uuml; and
 		non-Roman characters like <span style='font-size:13pt;'>&#1488;</span> and <span style='font:13pt Batang,"MS Gothic","MS Mincho",Arial'>&#23470;</span> are converted to
 		URL-encoded-equivalents, this function may not suitable for use with some non-Roman
 		languages.<br /><br />
-		
+
 		The rationale behind URL-encoding the non-English characters is that some web servers
 		and some web browsers are <i>not</i> 8-bit clean and may misbehave if they are
 		sent a direct code value in this range.

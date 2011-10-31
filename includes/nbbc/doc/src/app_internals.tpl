@@ -12,7 +12,7 @@
 		and Hopcroft and Ullman's <a href="http://www.amazon.com/Introduction-Automata-Theory-Languages-Computation/dp/0321462254/ref=sr_1_3?ie=UTF8&s=books&qid=1216066500&sr=1-3">Little Book of Evil</a>,
 		but be forewarned that compilers are a dense subject, and each one of those books
 		could readily be the subject of a year or two of study at a decent university.</p>
-		
+
 		<p>For what it's worth, you don't need to know any of the stuff in this section
 		to be able to use NBBC; this section is primarily of academic interest.</p>
 	</div></div>

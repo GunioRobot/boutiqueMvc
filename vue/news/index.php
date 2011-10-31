@@ -1,4 +1,4 @@
-<?php printHeader('accueil', false, 'accueil', false); 
+<?php printHeader('accueil', false, 'accueil', false);
 foreach ($newsArray as $news) { ?>
             <div id="news-<?php echo $news['ID']; ?>" class="block-middle">
                 <div class="head-block"><a href="news.php?id=<?php echo $news['ID'];?>"><?php echo $news['titre']; ?></a></div>

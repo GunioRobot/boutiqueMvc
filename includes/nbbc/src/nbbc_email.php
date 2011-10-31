@@ -23,12 +23,12 @@
         // @param   strEmailAddress     Email address to be checked
         // @return  True if email is valid, false if not
         function check_email_address($strEmailAddress) {
-            
+
             // If magic quotes is "on", email addresses with quote marks will
             // fail validation because of added escape characters. Uncommenting
             // the next three lines will allow for this issue.
-            //if (get_magic_quotes_gpc()) { 
-            //    $strEmailAddress = stripslashes($strEmailAddress); 
+            //if (get_magic_quotes_gpc()) {
+            //    $strEmailAddress = stripslashes($strEmailAddress);
             //}
 
             // Control characters are not allowed
@@ -45,7 +45,7 @@
             $arrEmailAddress[0] = substr($strEmailAddress, 0, $intAtSymbol);
             $arrEmailAddress[1] = substr($strEmailAddress, $intAtSymbol + 1);
 
-            // Count the "@" symbols. Only one is allowed, except where 
+            // Count the "@" symbols. Only one is allowed, except where
             // contained in quote marks in the local part. Quickest way to
             // check this is to remove anything in quotes.
             $arrTempAddress[0] = preg_replace('/"[^"]+"/'
@@ -91,7 +91,7 @@
             $arrLocalPortion = explode('.', $strLocalPortion);
             for ($i = 0, $max = sizeof($arrLocalPortion); $i < $max; $i++) {
                  if (!preg_match('.^('
-                                .    '([A-Za-z0-9!#$%&\'*+/=?^_`{|}~-]' 
+                                .    '([A-Za-z0-9!#$%&\'*+/=?^_`{|}~-]'
                                 .    '[A-Za-z0-9!#$%&\'*+/=?^_`{|}~-]{0,63})'
                                 .'|'
                                 .    '("[^\\\"]{0,62}")'
@@ -114,7 +114,7 @@
             // Check if domain is IP, possibly enclosed in square brackets.
             if (preg_match('/^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])'
                .'(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}$/'
-               ,$strDomainPortion) || 
+               ,$strDomainPortion) ||
                 preg_match('/^\[(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])'
                .'(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}\]$/'
                ,$strDomainPortion)) {

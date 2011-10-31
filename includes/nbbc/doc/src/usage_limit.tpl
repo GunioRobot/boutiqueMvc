@@ -523,7 +523,7 @@ for ($i = 0; $i < $num_postings; $i++) {
     $minute = substr($date, 14, 2);
     $second = substr($date, 17, 2);
 	$timestamp = mktime($hour, $minute, $second, $month, $day, $year, false);
-	
+
 	// ...and to RFC 2822 format, which is required by RSS 2.0.
     $rfc2822 = date("r", $timestamp);
     print "<date>" . htmlspecialchars($rfc2822) . "</date>\n";

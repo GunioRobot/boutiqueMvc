@@ -18,7 +18,7 @@ foreach ($newsArray as $news) {
 <?php } else{ foreach($commentsArray as $comment){ ?>
             <div class="element" id="comment<?php echo $comment['ID']; ?>">
                 <?php //echo nl2br(htmlspecialchars($comment['message']));
-                require_once("includes/nbbc/nbbc.php"); 
+                require_once("includes/nbbc/nbbc.php");
                 $bbcode = new BBCode;
                 $bbcode->SetLocalImgURL("http://127.0.0.1/boutiqueMvc/");
                 $bbcode->SetLocalImgDir(dirname(dirname(dirname(__FILE__))));
@@ -78,5 +78,5 @@ foreach ($newsArray as $news) {
 
 <?php }
 
-   
+
 printFooter();

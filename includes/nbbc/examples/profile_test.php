@@ -3,7 +3,7 @@
 <?php
 
 	require_once("../nbbc.php");
-	
+
 	$input = <<< EOI
 From [url=http://www.ushistory.org/Declaration/document/index.htm]ushistory.org[/url]:
 

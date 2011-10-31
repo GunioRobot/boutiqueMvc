@@ -3,7 +3,7 @@ include_once('modele/contact/envoi.php');
 
     // PAGE DE RECEPTION DES DONNEES ENVOYES LORS D'UN ENVOI DE MESSAGE
     // Utilisation d'une variable send pour conditionner la validité des champs
-    
+
     //la fonction errorEmpty va ensuite renvoyer $send = 0 si il y a une erreur et afficher les erreurs, sinon $send = 1
 
     $send[] = verificationFormulaire($_POST['nom'], $rgxNom, 'Erreur dans votre nom/prénom', false); //vérification de la valeur nom

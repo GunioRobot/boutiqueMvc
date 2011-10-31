@@ -167,7 +167,7 @@ documented here.</p>
 	<li><a href="api_core.html#ref_parser_Parse">BBCode::Parse</a></li>
 	<li><a href="api_rule.html#ref_parser_RemoveRule">BBCode::RemoveRule</a></li>
 	<li><a href="api_smiley.html#ref_parser_RemoveSmiley">BBCode::RemoveSmiley</a><br /><br /></li>
-	
+
 	<li><a href="api_behv.html#ref_parser_SetAllowAmpersand">BBCode::SetAllowAmpersand</a></li>
 	<li><a href="api_core.html#ref_parser_SetDebug">BBCode::SetDebug</a></li>
 	<li><a href="api_rule.html#ref_parser_SetDefaultRules">BBCode::SetDefaultRules</a></li>

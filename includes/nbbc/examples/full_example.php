@@ -75,7 +75,7 @@ div.bbcode_code_body { background-color: skyblue; color: black;
 	if (!isset($_POST['bbcode_input']))
 		$input = "Type your message here.";
 	else $input = @$_POST['bbcode_input'];
-	
+
 	print htmlspecialchars($input);
 
 ?>
@@ -130,7 +130,7 @@ div.bbcode_code_body { background-color: skyblue; color: black;
 		$bbcode->SetPlainMode($plain_mode);
 
 		$output = $bbcode->Parse($input);
-	
+
 		print "<div class='box'>\n"
 			. "<div class='bbcode'>$output</div>\n"
 			. "</div>\n";

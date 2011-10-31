@@ -1,19 +1,19 @@
 <?php
 
 	// Copyright (c) 2008, the Phantom Inker.  All rights reserved.
-	// 
+	//
 	// Redistribution and use in source and binary forms, with or without
 	// modification, are permitted provided that the following conditions
 	// are met:
-	// 
+	//
 	// * Redistributions of source code must retain the above copyright
 	//   notice, this list of conditions and the following disclaimer.
-	// 
+	//
 	// * Redistributions in binary form must reproduce the above copyright
 	//   notice, this list of conditions and the following disclaimer in
 	//   the documentation and/or other materials provided with the
   	// distribution.
-	// 
+	//
 	// THIS SOFTWARE IS PROVIDED BY THE PHANTOM INKER "AS IS" AND ANY EXPRESS
 	// OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 	// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -65,7 +65,7 @@
 	table.smiley_table th, table.smiley_table td { border: 1px solid #999; text-align: left;
 		background-color: #EEE; padding: 0.5em 1em; }
 	table.smiley_table td { font: 10pt Courier,monospace,mono; white-space: pre; }
-	table.smiley_table tbody th { text-align: center; }	
+	table.smiley_table tbody th { text-align: center; }
 --></style>
 <base href="<?php print "http://" . $_SERVER['SERVER_NAME'] . dirname(dirname($_SERVER['REQUEST_URI'])); ?>" />
 </head>

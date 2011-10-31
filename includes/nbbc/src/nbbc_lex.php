@@ -55,12 +55,12 @@
 		var $token;			// Return token type:  One of the BBCODE_* constants.
 		var $text;			// Actual exact, original text of token.
 		var $tag;			// If token is a tag, this is the decoded array version.
-		
+
 		var $state;			// Next state of the lexer's state machine: text, or tag/ws/nl
 		var $input;			// The input string, split into an array of tokens.
 		var $ptr;			// Read pointer into the input array.
 		var $unget;			// Whether to "unget" the last token.
-		
+
 		var $verbatim;		// In verbatim mode, we return all input, unparsed, including comments.
 		var $debug;			// In debug mode, we dump decoded tags when we find them.
 
@@ -77,7 +77,7 @@
 			// anything starting with a [, ending with a ], and containing no [ or ] in
 			// between unless surrounded by "" or '', and containing no newlines.
 			// We also separate out whitespace and newlines.
-			
+
 			// Choose a tag marker based on the possible tag markers.
 			$regex_beginmarkers = Array( '[' => '\[', '<' => '<', '{' => '\{', '(' => '\(' );
 			$regex_endmarkers   = Array( '[' => '\]', '<' => '>', '{' => '\}', '(' => '\)' );
@@ -87,7 +87,7 @@
 			$b = $regex_beginmarkers[$tagmarker];
 			$this->tagmarker = $tagmarker;
 			$this->end_tagmarker = $endmarkers[$tagmarker];
-			
+
 			// $this->input will be an array of tokens, with the special property that
 			// the elements strictly alternate between plain text and tags/whitespace/newlines,
 			// and that tags always have *two* entries per tag.  The first element will
@@ -135,13 +135,13 @@
 			$this->pat_comment = "/^ {$b} (?: -- | ' ) /Dx";
 			$this->pat_comment2 = "/^ {$b}!-- (?: [^-] | -[^-] | --[^{$e}] )* --{$e} $/Dx";
 			$this->pat_wiki = "/^ {$b}{$b} ([^\\|]*) (?:\\|(.*))? {$e}{$e} $/Dx";
-			
+
 			// Current lexing state.
 			$this->ptr = 0;
 			$this->unget = false;
 			$this->state = BBCODE_LEXSTATE_TEXT;
 			$this->verbatim = false;
-			
+
 			// Return values.
 			$this->token = BBCODE_EOI;
 			$this->tag = false;
@@ -156,11 +156,11 @@
 			$length = 0;
 			$ptr = 0;
 			$state = BBCODE_LEXSTATE_TEXT;
-			
+
 			// Loop until we find a valid (nonempty) token.
 			while ($ptr < count($this->input)) {
 				$text = $this->input[$ptr++];
-				
+
 				if ($state == BBCODE_LEXSTATE_TEXT) {
 					$state = BBCODE_LEXSTATE_TAG;
 					$length += strlen($text);
@@ -204,13 +204,13 @@
 		//       ...
 		//    )
 		function NextToken() {
-		
+
 			// Handle ungets; if the last token has been "ungotten", just return it again.
 			if ($this->unget) {
 				$this->unget = false;
 				return $this->token;
 			}
-			
+
 			// Loop until we find a valid (nonempty) token.
 			while (true) {
 
@@ -220,12 +220,12 @@
 					$this->tag = false;
 					return $this->token = BBCODE_EOI;
 				}
-				
+
 				// Inhale one token, sanitizing away any weird control characters.  We
 				// allow \t, \r, and \n to pass through, but that's it.
 				$this->text = preg_replace("/[\\x00-\\x08\\x0B-\\x0C\\x0E-\\x1F]/", "",
 					$this->input[$this->ptr++]);
-				
+
 				if ($this->verbatim) {
 
 					// In verbatim mode, we return *everything* as plain text or whitespace.
@@ -302,7 +302,7 @@
 					case 123:
 						// Tag or comment.  This is the most complicated one, because it
 						// needs to be parsed into its component pieces.
-						
+
 						// See if this is a comment; if so, skip it.
 						if (preg_match($this->pat_comment, $this->text)) {
 							// This is a comment, not a tag, so treat it like it doesn't exist.
@@ -314,7 +314,7 @@
 							$this->state = BBCODE_LEXSTATE_TEXT;
 							continue;
 						}
-						
+
 						// See if this is a [[wiki link]]; if so, convert it into a [wiki="" title=""] tag.
 						if (preg_match($this->pat_wiki, $this->text, $matches)) {
 							$this->tag = Array('_name' => 'wiki', '_endtag' => false,
@@ -322,7 +322,7 @@
 							$this->state = BBCODE_LEXSTATE_TEXT;
 							return $this->token = BBCODE_TAG;
 						}
-						
+
 						// Not a comment, so parse it like a tag.
 						$this->tag = $this->Internal_DecodeTag($this->text);
 						$this->state = BBCODE_LEXSTATE_TEXT;
@@ -331,7 +331,7 @@
 				}
 			}
 		}
-		
+
 		// Ungets the last token read so that a subsequent call to NextToken() will
 		// return it.  Note that UngetToken() does not switch states when you switch
 		// between verbatim mode and standard mode:  For example, if you read a tag,
@@ -366,7 +366,7 @@
 				'verbatim' => $this->verbatim
 			);
 		}
-		
+
 		// Restore the state of this lexer from a saved previous state.
 		function RestoreState($state) {
 			if (!is_array($state)) return;
@@ -482,7 +482,7 @@
 						$ptr++;
 					}
 					if ($type == -1) $ptr--;
-					
+
 					// We've now found the first (appropriate) equal-sign after the start of the
 					// default value.  (In the example above, that's the "=" after "target".)  We
 					// now have to rewind back to the last whitespace to find where the default
@@ -506,7 +506,7 @@
 						else $value .= $this->Internal_StripQuotes($pieces[$start]);
 					}
 					$value = trim($value);
-					
+
 					$ptr++;
 				}
 

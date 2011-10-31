@@ -9,7 +9,7 @@
 <?php
 
 	require_once("../nbbc.php");
-	
+
 	$bbcode = new BBCode;
 
 	// This is our example template.  Variables in {curly braces} will be filled in from

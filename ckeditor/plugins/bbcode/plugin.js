@@ -17,7 +17,7 @@ CKEDITOR.htmlDataProcessor.prototype =
 {
 	toHtml : function( data, fixForBody )
 	{
-		
+
 		// Convert < and > to their HTML entities.
 		data = data.replace( /</g, '&lt;' ) ;
 		data = data.replace( />/g, '&gt;' ) ;
@@ -37,22 +37,22 @@ CKEDITOR.htmlDataProcessor.prototype =
 
 		// [u]
 		data = data.replace( /\[u\](.+?)\[\/u]/gi, '<u>$1</u>' ) ;
-		
+
 		// [img]
 		data = data.replace(/\[img\](.*?)\[\/img\]/gi,'<img src="$1" />');
-		
+
 		// [quote]
 		//data = data.replace( /\[quote\](.+?)\[\/quote]/gi, '<quote>$1</quote>' ) ;
 		data = data.replace( /\[quote\]/gi, '<blockquote>' ) ;
 		data = data.replace( /\[\/quote]/gi, "</blockquote> \n" ) ;
-		
+
 		// [code]
 		data = data.replace(/\[code\]/gi,'<code>');
 		data = data.replace(/\[\/code\]/gi,'</code>');
-		
+
 		// [color]
 		data = data.replace(/\[color=(.*?)\](.*?)\[\/color\]/gi,'<span style="color: $1">$2</span>');
-			
+
 		return data;
 	},
 
@@ -79,24 +79,24 @@ CKEDITOR.htmlDataProcessor.prototype =
 		// [u]
 		html = html.replace( /<u>/gi, '[u]') ;
 		html = html.replace( /<\/u>/gi, '[/u]') ;
-		
+
 		// [img]
 		//html = html.replace(/<img.*?src=\"(.*?)\".*?\/>/gi,"[img]$1[/img]");
 		html = html.replace( /<img .*?src=(["'])(.+?)\1.*?\/>/gi, '[img]$2[/img]') ;
 		html = html.replace( /<img .*?src=(["'])(.+?)\1.*?>/gi, '[img]$2[/img]') ;
-		
+
 		// [quote]
 		html = html.replace( /<blockquote>/gi, '[quote]') ;
 		html = html.replace( /<\/blockquote>/gi, '[/quote]') ;
-		
+
 		// [code]
 		html = html.replace( /<code>/gi, '[code]') ;
 		html = html.replace( /<\/code>/gi, '[/code]') ;
-		
+
 		// [color]
 		html = html.replace(/<span style=\"color: ?(.*?);\">(.*?)<\/span>/gi,"[color=$1]$2[/color]");
 		html = html.replace(/<font.*?color=\"(.*?)\".*?>(.*?)<\/font>/gi,"[color=$1]$2[/color]");
-		
+
 		// Remove remaining tags.
 		html = html.replace( /<[^>]+>/g, '') ;
 

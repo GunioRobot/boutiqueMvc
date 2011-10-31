@@ -9,7 +9,7 @@ CKEDITOR.editorConfig = function( config )
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
     config.toolbar = 'Simple';
-    
+
     //ajout KCFinder
    config.filebrowserBrowseUrl = '/boutiqueMvc/kcfinder/browse.php?type=files';
    config.filebrowserImageBrowseUrl = '/boutiqueMvc/kcfinder/browse.php?type=images';
@@ -18,7 +18,7 @@ CKEDITOR.editorConfig = function( config )
    config.filebrowserImageUploadUrl = '/boutiqueMvc/kcfinder/upload.php?type=images';
    config.filebrowserFlashUploadUrl = '/boutiqueMvc/kcfinder/upload.php?type=flash';
 
-            
+
 
     config.toolbar_Simple =
     [
@@ -26,8 +26,8 @@ CKEDITOR.editorConfig = function( config )
         ['Bold','Italic','Strike'],
         ['TextColor','BGColor'],
         ['NumberedList','BulletedList','-','Blockquote'],
-        
-        
+
+
         '/',
         ['NewPage','Preview'],
         ['SpellChecker','Scayt'],
@@ -35,8 +35,8 @@ CKEDITOR.editorConfig = function( config )
         ['Link','Unlink'],
         ['Image','Flash','HorizontalRule','Smiley','SpecialChar','PageBreak'],
         ['Maximize']
-        
-        
+
+
     ];
 
     CKEDITOR.config.toolbar_News =
@@ -53,9 +53,9 @@ CKEDITOR.editorConfig = function( config )
 	'/',
 	['Styles','Font','FontSize'],
 	['TextColor','BGColor'],
-	
+
 ];
-	
+
 
 
 };

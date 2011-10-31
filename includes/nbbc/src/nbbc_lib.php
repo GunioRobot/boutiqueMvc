@@ -61,7 +61,7 @@
 
 		//-----------------------------------------------------------------------------
 		// Standard library of smiley definitions.
-	
+
 		var $default_smileys = Array(
 			':)' => 'smile.gif',       ':-)' => 'smile.gif',
 			'=)' => 'smile.gif',       '=-)' => 'smile.gif',
@@ -122,7 +122,7 @@
 		// Standard rules for what to do when a BBCode tag is encountered.
 
 		var $default_tag_rules = Array(
-		
+
 			'b' => Array(
 				'simple_start' => "<b>",
 				'simple_end' => "</b>",
@@ -438,7 +438,7 @@
 				return '<a href="mailto:' . htmlspecialchars($email) . '" class="bbcode_email">' . $content . '</a>';
 			else return htmlspecialchars($params['_tag']) . $content . htmlspecialchars($params['_endtag']);
 		}
-		
+
 		// Format a [size] tag by producing a <span> with a style with a different font-size.
 		function DoSize($bbcode, $action, $name, $default, $params, $content) {
 			switch ($default) {

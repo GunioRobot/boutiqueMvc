@@ -44,11 +44,11 @@ elseif (isset($_GET['admin']))
     case 'achat-show': include_once('control/boutique/admin/achat-show.php'); break;
     case 'achat-del': include_once('control/boutique/admin/achat-del.php'); break;
     case 'categorie': include_once('control/boutique/admin/categorie.php'); break;
-    
+
     case 'del': include_once('control/boutique/admin/delete.php'); break;
 
     default: include_once('control/boutique/admin/index.php'); break;
-    }    
+    }
 }
 else
 {

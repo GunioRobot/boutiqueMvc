@@ -40,13 +40,13 @@ that NBBC will convert it into "<tt>dogcar.png</tt>":</p>
 		<tt>83</tt> is probably a bad idea, simply because the number "83" is likely to eventually
 		appear in text somewhere.  The last thing you ever want to see on your site is something
 		like this:</p>
-		
+
 		<p style='margin-left: 2em;'><tt><img src="../smileys/teeth.gif" width='16' height='16' alt='83' /> people died in that plane crash.</tt></p>
-		
+
 		<p>This is why most unusual smileys on most sites are done with keywords surrounded by
 		colons:  If this smiley had been registered as <tt>:goofygrin:</tt> instead of as <tt>83</tt>,
 		this tragedy might have been averted.</p>
-		
+
 		<p>So it's up to you what smileys you register, but be careful:  Your smileys may have
 		unintendend consequences if you don't think carefully about how they might be used.</p>
 	</div></div>

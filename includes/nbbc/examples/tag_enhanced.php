@@ -9,11 +9,11 @@
 <?php
 
 	require_once("../nbbc.php");
-	
+
 	$input = "[border color=red size=3]This text is in a medium red border![/border]\n"
 		. "[border size=10]This text is in a fat blue border![/border]\n"
 		. "[border color=green]This text is in a normal green border![/border]\n";
-	
+
 	$bbcode = new BBCode;
 
 	$bbcode->AddRule('border',  Array(

@@ -50,7 +50,7 @@
 	//  designed.
 	//
 	//-----------------------------------------------------------------------------
-	
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1024,7 +1024,7 @@ h1 { text-align: center; }
 				. "\n</td></tr></tbody></table>\n"
 				. "\n</div>\n",
 		),
-		
+
 		"Lists and List Items",
 		Array(
 			'descr' => "[list] and [*] should produce an unordered list.",
@@ -1110,14 +1110,14 @@ h1 { text-align: center; }
 		'template' => '<span style="wstest:{$_default}">{$_content}</span>',
 		'class' => 'inline',
 		'allow_in' => Array('listitem', 'block', 'columns', 'inline', 'link'),
-	));	
+	));
 	$bbcode->SetLocalImgDir("smileys");
 	$bbcode->SetLocalImgURL("smileys");
 
 	print "<table class='test_table' align='center'>\n"
 		. "<thead><tr><th>Description</th><th>Result</th><th>Avg. Time</th></thead>\n"
 		. "<tbody>\n";
-		
+
 	$numpassed = 0;
 	$numfailed = 0;
 	$numtested = 0;

@@ -9,7 +9,7 @@ include_once('modele/boutique/achatEnvoi.php');
     $send[] = verificationFormulaire($_POST['ville'], $rgxNom, 'Erreur dans votre ville', false); //vérification de la valeur ville
     $send[] = verificationFormulaire($_POST['pays'], $rgxNom, 'Erreur dans votre pays', false); //vérification de la valeur pays
     $send[] = verificationFormulaire($_POST['ID_produit'], $rgxNombre, 'Erreur dans votre n° de produit. Si cette erreur apparait, veuillez ne pas manipuler le code source ou <a href="contact.php">contacter l\'admin</a>. ', false); //vérification de la valeur ID_produit
-    
+
 
     if(!$_SESSION['login']){
     //RECPATCHA
@@ -51,7 +51,7 @@ include_once('modele/boutique/achatEnvoi.php');
         insertFlood($_SERVER['REMOTE_ADDR']);
         modifyNbAchat($_POST['ID_produit']);
 
-        
+
         foreach($produitArray as $produit){
             if($_SESSION['login']){$prix = $produit['prix'] - (($produit['prix'])*10/100);}
             else {$prix = $produit['prix'];}

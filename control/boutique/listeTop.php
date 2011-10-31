@@ -1,6 +1,6 @@
-<?php include("functions.php"); checkLogin(); 
+<?php include("functions.php"); checkLogin();
 
-include_once('modele/boutique/getTop.php'); 
+include_once('modele/boutique/getTop.php');
 $top = (int) $_GET['top'];
 $produitsArray = getTop($top);
 

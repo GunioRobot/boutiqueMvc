@@ -26,12 +26,12 @@ following additional parameters:</p>
 	that if an end tag is optional, or it's required but the user forgets to provide it, this
 	value will still contain appropriate closing-tag text (i.e., the parser will create a suitable
 	end tag).</li>
-	
+
 <li style='margin-bottom:1em;'><tt>_hasend</tt>: If a closing tag was provided by the user, this will be set to <tt>true</tt>;
 	if no closing tag was provided, or this tag didn't allow a closing tag, this will be set to <tt>false</tt>.
 	You can use this field to distinguish whether the user has provided a closing tag or not when
 	closing tags are optional.</li>
-	
+
 <li style='margin-bottom:1em;'><tt>_params</tt>: The exact parameters of the tag, parsed, in list form.  For example, in
 	<tt>[font=Arial&nbsp;size=5]</tt>, this parameter will contain this array:
 <pre>Array(

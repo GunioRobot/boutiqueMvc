@@ -18,7 +18,7 @@
     include_once('modele/membre/selectID-pseudoMembre.php');
 
     //on conditionne l'envoi des infos par la variable send
-        
+
         //la fonction errorEmpty va ensuite renvoyer $send = 0 si il y a une erreur et afficher les erreurs, sinon $send = 1
         $send[] = verificationFormulaire($_POST['nom'], $rgxNom, 'Erreur dans votre nom', false); //vérification de la valeur nom
         $send[] = verificationFormulaire($_POST['prenom'], $rgxNom, 'Erreur dans votre prénom', false); //vérification de la valeur prénom

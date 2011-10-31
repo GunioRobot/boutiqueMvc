@@ -3,7 +3,7 @@
 include_once('modele/boutique/getProduits.php'); include_once('modele/boutique/getNbProduit.php');
 $titre = 'tous les produits de la boutique'; $url = 'boutique.php?op=listAll';
 
-$nbProduits = getNombreProduit(); 
+$nbProduits = getNombreProduit();
 $nbPages=(int)($nbProduits/$produitsParPage)+1;
     if(($nbProduits%$produitsParPage) == 0) {$nbPages = ($nbPages-1);}
     if(!isset($_GET['page'])) // si pas de ?page= --> on en conclut que c'est la page 1 qu'on veut

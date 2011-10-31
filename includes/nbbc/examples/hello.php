@@ -9,9 +9,9 @@
 <?php
 
 	require_once("../nbbc.php");
-	
+
 	$input = "[b][i]Hello, World![/i][/b]";
-	
+
 	$bbcode = new BBCode;
 	$output = $bbcode->Parse($input);
 

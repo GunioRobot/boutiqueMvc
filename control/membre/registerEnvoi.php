@@ -62,7 +62,7 @@
             $_SESSION['ID'] = $infosMembre['ID'];
             $_SESSION['pseudo'] = $infosMembre['pseudo'];
             $_SESSION['login'] = true;
-        }        
+        }
     }
     // On affiche la page (vue)
     include_once('vue/membre/registerEnvoi.php');

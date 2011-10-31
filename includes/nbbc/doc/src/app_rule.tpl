@@ -97,7 +97,7 @@ usually be assumed if no member is given.</p>
 	for 'after' removal, the pattern is matched <i>forward</i> from the tag.
 	The default is the empty string, which means no whitespace or newlines
 	are to be removed.<br /><br />
-	
+
 	<u>Common examples:</u><br />
 	&nbsp; &nbsp; &nbsp; <tt>'s'&nbsp;&nbsp;</tt> &nbsp; &nbsp; &nbsp; &nbsp; Remove all non-newline whitespace<br />
 	&nbsp; &nbsp; &nbsp; <tt>'sn'&nbsp;</tt> &nbsp; &nbsp; &nbsp; &nbsp; Remove all non-newline whitespace, then a single newline if it exists.<br />
@@ -132,5 +132,5 @@ Must be exactly one of the following identifiers:<br /><br />
 	special class, "<tt>block</tt>", which is used by the invisible "root tag" of the
 	BBCode tree, but may be used for other tags as well.  See the description of
 	<a href="app_class.html">content classes</a> below to understand how this is used.<br /><br /></li>
-	
+
 </ul>

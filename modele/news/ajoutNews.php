@@ -10,7 +10,7 @@ function ajoutNews($titre, $auteur, $texte){
 
 function updateNews($id, $titre, $auteur, $date, $texte){
     global $bdd;
-    
+
     $req = $bdd->prepare('UPDATE news SET titre = :titre, auteur = :auteur, date = :date, texte = :texte WHERE ID = :id');
     $req->execute(array('titre' => $titre, 'auteur' => $auteur, 'date' => $date, 'texte' => $texte,
         'id' => $id)) or die(print_r($req->errorInfo()));

@@ -35,7 +35,7 @@ which, in this case, is named "<tt>MyBorderFunction</tt>":</p>
 		doesn't need to be just a function name:  If you want NBBC to call a method of an
 		object of a particular class, you can supply an array instead of a string, like
 		this (where <tt>$obj</tt> contains an object with a member function named "<tt>MyMethod</tt>"):</p>
-		
+
 		<p><tt>'method' =&gt; Array($obj, 'MyMethod'),</tt></p>
 	</div></div>
 	</div>
@@ -119,7 +119,7 @@ our <tt>[border]</tt> example might look like this:</p>
 	<div class='tipbox_content'><div class='tipbox_content2'>
 		<p>When you implement a callback function, take special care to note which parameters are
 		validated and which parameters are not:</p>
-		
+
 		<ul>
 		<li><b><tt>$default</tt></b> contains exactly what the user typed, and has not been passed through
 			<tt>htmlspecialchars()</tt> or <tt>htmlentities()</tt> or any other cleanup function.
